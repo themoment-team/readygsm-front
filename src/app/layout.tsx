@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 
+import { pretendard } from '@/styles/fonts';
 import '@/styles/globals.css';
 
 import Provider from './provider';
@@ -15,7 +16,7 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => (
   <html lang="ko">
-    <body>
+    <body className={pretendard.className}>
       <Provider>{children}</Provider>
     </body>
   </html>
