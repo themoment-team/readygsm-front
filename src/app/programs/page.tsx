@@ -1,7 +1,7 @@
-import { RegisterPage } from '@/pageContainer';
+import { ProgramsPage } from '@/pageContainer';
 
-const Register = () => {
-  return <RegisterPage />;
+const Programs = () => {
+  return <ProgramsPage />;
 };
 
-export default Register;
+export default Programs;

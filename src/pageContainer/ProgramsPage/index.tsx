@@ -13,7 +13,7 @@ type RegisterData = {
   status: RegisterStatus;
 };
 
-const RegisterPage = () => {
+const ProgramsPage = () => {
   const responseData: RegisterData[] = [
     { id: 1, title: 'AI와 이미지 인식', status: 'OPEN' },
     { id: 2, title: '딥러닝 기초', status: 'cancelled' },
@@ -327,4 +327,4 @@ const RegisterPage = () => {
   );
 };
 
-export default RegisterPage;
+export default ProgramsPage;
