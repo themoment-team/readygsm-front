@@ -1,3 +1,6 @@
+import { useQuery } from '@tanstack/react-query';
+
+import { get } from '@/lib/api';
 import { cn } from '@/lib/utils';
 
 const Hello: React.FC<{ email: string }> = ({ email }) => {
@@ -17,45 +20,47 @@ const Hello: React.FC<{ email: string }> = ({ email }) => {
       ></div>
       <div
         className={cn(
+          'text-[var(--slate-800,#1E293B)]',
+          'text-center',
           'font-[Pretendard]',
           'text-[1.5rem]',
+          'leading-[2rem]',
           'tracking-[-0.009rem]',
-          'text-[var(--blue2,#0C4A6E)]',
         )}
       >
-        {email}
+        {email}님
       </div>
     </div>
   );
 };
 
 const Box = ({}) => {
-  return <div></div>;
+  return <div>asdf</div>;
 };
 
 const ProfilePage = () => {
-  const email = 'example123@gmail.com';
+  const email = 's24015@gsm.hs.kr';
   return (
     <div className={cn('bg-background', 'h-screen', 'font-[Pretendard]')}>
       <div //이미지 + 유저 아이디
         className={cn(
-          'mt-[10.38rem]',
+          'mt-[4.97rem]',
           'flex',
           'flex-col',
           'items-center',
           'justify-center',
-          'gap-4',
+          'gap-8',
         )}
       >
         <Hello email={email} />
-        <div className={cn('mt-[6.75rem]', 'flex', 'flex-col', 'gap-[1.81rem]')}>
+        <div className={cn('flex', 'flex-col', 'gap-4')}>
           <div
             className={cn(
-              'w-[88rem]',
-              'text-[var(--Header-text,#111827)]',
+              'w-[60rem]',
+              'text-[var(--gray-700,#374151)]',
               'font-[Pretendard]',
-              'text-[1.75rem]',
-              'leading-normal',
+              'text-[1.5rem]',
+              'leading-[1.5rem]',
             )}
           >
             신청된 프로그램
