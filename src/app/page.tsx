@@ -1,7 +1,11 @@
-import { MainPage } from '@/pageContainer';
+'use client';
 
-const Main = () => {
-  return <MainPage />;
-};
+import Footer from '@/components/Footer';
 
-export default Main;
+export default function Home() {
+  return (
+    <div>
+      <Footer />
+    </div>
+  );
+}
