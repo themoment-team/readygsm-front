@@ -25,6 +25,20 @@ const config: Config = {
         },
         background: '#F5F9FB',
       },
+      screens: {
+        // Mobile
+        mobile: '450px',
+        'mobile-lg': '600px',
+        // Tablet
+        'tablet-sm': '750px',
+        tablet: '850px',
+        'tablet-lg': '1024px',
+        // Desktop
+        'desktop-sm': '1200px',
+        desktop: '1440px',
+        'desktop-lg': '1728px',
+        'desktop-xl': '1920px',
+      },
     },
   },
   plugins: [],
