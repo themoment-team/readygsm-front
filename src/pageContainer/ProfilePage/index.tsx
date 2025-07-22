@@ -1,4 +1,8 @@
-import { useQuery } from '@tanstack/react-query';
+'use client';
+
+import { useEffect, useState } from 'react';
+
+import axios from 'axios';
 
 import { get } from '@/lib/api';
 import { cn } from '@/lib/utils';
@@ -35,11 +39,29 @@ const Hello: React.FC<{ email: string }> = ({ email }) => {
 };
 
 const Box = ({}) => {
-  return <div>asdf</div>;
+  return <div></div>;
 };
 
 const ProfilePage = () => {
-  const email = 's24015@gsm.hs.kr';
+  interface Users {
+    email: string;
+  }
+
+  const [users, setUsers] = useState<Users | null>(null);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const res = await axios.get('/api/v1/users/me');
+        setUsers(res.data);
+      } catch (err) {
+        console.error('에러 발생:', err);
+      }
+    };
+
+    fetchPosts();
+  }, []);
+
   return (
     <div className={cn('bg-background', 'h-screen', 'font-[Pretendard]')}>
       <div //이미지 + 유저 아이디
@@ -52,7 +74,7 @@ const ProfilePage = () => {
           'gap-8',
         )}
       >
-        <Hello email={email} />
+        <Hello email={users?.email ?? '알수없는오류'} />
         <div className={cn('flex', 'flex-col', 'gap-4')}>
           <div
             className={cn(
