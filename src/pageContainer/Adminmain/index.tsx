@@ -4,7 +4,11 @@ import { cn } from '@/lib/utils';
 const Adminmain = () => {
   return (
     <div
-      className={cn('flex h-screen w-full flex-col items-center justify-center', 'gap-[0.5rem]')}
+      className={cn(
+        'flex h-screen w-full flex-col items-center justify-center',
+        'gap-[0.5rem]',
+        'bg-background',
+      )}
     >
       <div
         className={cn(
