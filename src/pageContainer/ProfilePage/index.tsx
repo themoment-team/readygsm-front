@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 import axios from 'axios';
 
+import { Person } from '@/assets';
 import { get } from '@/lib/api';
 import { cn } from '@/lib/utils';
 
@@ -21,7 +22,9 @@ const Hello: React.FC<{ email: string }> = ({ email }) => {
           'py-[1.375rem]',
           'items-center',
         )}
-      ></div>
+      >
+        <Person></Person>
+      </div>
       <div
         className={cn(
           'text-[var(--slate-800,#1E293B)]',
@@ -32,7 +35,7 @@ const Hello: React.FC<{ email: string }> = ({ email }) => {
           'tracking-[-0.009rem]',
         )}
       >
-        {email}님
+        {email}
       </div>
     </div>
   );
@@ -64,15 +67,8 @@ const ProfilePage = () => {
 
   return (
     <div className={cn('bg-background', 'h-screen', 'font-[Pretendard]')}>
-      <div //이미지 + 유저 아이디
-        className={cn(
-          'mt-[4.97rem]',
-          'flex',
-          'flex-col',
-          'items-center',
-          'justify-center',
-          'gap-8',
-        )}
+      <div
+        className={cn('mt-[9rem]', 'flex', 'flex-col', 'items-center', 'justify-center', 'gap-8')}
       >
         <Hello email={users?.email ?? '알수없는오류'} />
         <div className={cn('flex', 'flex-col', 'gap-4')}>
