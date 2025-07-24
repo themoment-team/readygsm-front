@@ -16,15 +16,9 @@ const Footer = () => {
           </div>
 
           <div className="mt-4 flex gap-6 text-[1.25rem] font-bold text-[#4B5563]">
-            <a href="#" className="hover:underline">
-              홈페이지
-            </a>
-            <a href="#" className="hover:underline">
-              찾아오시는 길
-            </a>
-            <a href="#" className="hover:underline">
-              교내 배치도
-            </a>
+            <a href="http://gsm.gen.hs.kr/main/main.php">홈페이지</a>
+            <a href="https://official.hellogsm.kr/about/location">찾아오시는 길</a>
+            <a href="http://gsm.gen.hs.kr/sub/page.php?page_code=info_14">교내 배치도</a>
           </div>
 
           <div className="mt-16 text-center text-[1rem] leading-relaxed text-[#9CA3AF] sm:text-right">
