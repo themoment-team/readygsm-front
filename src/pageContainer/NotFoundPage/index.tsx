@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { Arrow, Four, Four2, Zero } from '@/assets';
 import { cn } from '@/lib/utils';
 
-const NotFound = () => {
+const NotFoundPage = () => {
   const router = useRouter();
 
   const GoBack = () => {
@@ -32,11 +32,11 @@ const NotFound = () => {
         </div>
       </div>
 
-      <p className="mt-20 text-[1.5rem] font-bold text-black mobile:text-[1.125rem] mobile-lg:text-[1.25rem] tablet-sm:text-[1.375rem] tablet:text-[1.5rem]">
+      <p className="mt-10 text-[1.5rem] font-semibold text-black mobile:text-[1.125rem] mobile-lg:text-[1.25rem] tablet-sm:text-[1.375rem] tablet:text-[1.875rem]">
         페이지를 찾을 수 없음
       </p>
 
-      <p className="mt-4 text-[1.5rem] text-gray-400 mobile:text-[0.875rem] mobile-lg:text-[1rem] tablet-sm:text-[1.125rem] tablet:text-[1.25rem] tablet-lg:text-[1.375rem] desktop-sm:text-[1.5rem] desktop:text-[1.625rem] desktop-lg:text-[1.75rem] desktop-xl:text-[1.875rem]">
+      <p className="mt-2 text-[1rem] text-gray-500 mobile:text-[1rem] mobile-lg:text-[1rem] tablet-sm:text-[1.125rem] tablet:text-[1.25rem] tablet-lg:text-[1.25rem] desktop-sm:text-[1.25rem] desktop:text-[1.25rem] desktop-lg:text-[1.25rem] desktop-xl:text-[1.25rem]">
         입력하신 페이지의 주소가 정확한지 다시 한번 확인해 주세요.
       </p>
 
@@ -52,4 +52,4 @@ const NotFound = () => {
   );
 };
 
-export default NotFound;
+export default NotFoundPage;
