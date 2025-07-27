@@ -2,17 +2,19 @@
 
 import React from 'react';
 
+import { Dot } from '@/assets';
+
 function FeatureBox(props: { text: React.ReactNode; emoji: string }) {
   const { text, emoji } = props;
   return (
     <div
-      className="relative mt-16 h-[250px] rounded-xl bg-[#FAFAFA] px-8 pb-6 pt-8 text-left"
+      className="bg-[ relative mt-16 h-[250px] rounded-xl px-8 pb-6 pt-8 text-left"
       style={{
         boxShadow: '0px 4px 20px 0px rgba(112, 144, 176, 0.12)',
       }}
     >
       <p
-        className="max-w-[360px] text-[1.2rem] font-semibold leading-[1.4] text-[#0C4A6E]"
+        className="max-w-[360px] text-[1.2rem] font-semibold leading-[1.4] text-blue-700"
         style={{ position: 'relative', left: '-20px' }}
       >
         {text}{' '}
@@ -35,7 +37,7 @@ type FeatureProps = {
 
 function Feature({ imgSrc, title, tags, tagColor, description }: FeatureProps) {
   return (
-    <article className="rounded-[1rem] bg-[#F5F9FB]">
+    <article className="rounded-[1rem] bg-gray-50">
       <img src={imgSrc} alt={title} className="mb-6 h-[13rem] w-full rounded-[1rem] object-cover" />
       <div className="p-4">
         <h3 className="mb-4 whitespace-nowrap text-[1.5rem] font-semibold text-black">{title}</h3>
@@ -57,7 +59,7 @@ function Feature({ imgSrc, title, tags, tagColor, description }: FeatureProps) {
             </span>
           ))}
         </div>
-        <p className="text-[1.125rem] leading-relaxed text-[#7E8490]">{description}</p>
+        <p className="text-[1.125rem] leading-relaxed text-gray-500">{description}</p>
       </div>
     </article>
   );
@@ -76,11 +78,11 @@ export default function MainPage() {
             <div className="text-white">
               <h1 className="relative text-[2.25rem] font-bold leading-snug sm:text-[3.25rem]">
                 <div className="absolute -top-5 left-1/2 z-10 flex translate-x-[calc(-100%-73px)] gap-8">
-                  <div className="h-2 w-2 rounded-full bg-[#BEF264]" />
-                  <div className="h-2 w-2 rounded-full bg-[#BEF264]" />
-                  <div className="h-2 w-2 rounded-full bg-[#BEF264]" />
+                  <div className="h-2 w-2 rounded-full bg-lime-300" />
+                  <div className="h-2 w-2 rounded-full bg-lime-300" />
+                  <div className="h-2 w-2 rounded-full bg-lime-300" />
                 </div>
-                <span className="text-[#7DD3FC]">Ready GSM</span>과 함께 나에게 맞는
+                <span className="text-blue-100">Ready GSM</span>과 함께 나에게 맞는
                 <br />
                 GSM을 직접 경험해보세요!
               </h1>
@@ -152,32 +154,29 @@ export default function MainPage() {
         {/* 섹션 2 */}
         <section
           id="features"
-          className="flex min-h-screen flex-col items-center justify-center bg-[#F5F9FB] px-4 py-20"
+          className="flex min-h-screen flex-col items-center justify-center bg-gray-50 px-4 py-20"
         >
           <div className="text-center text-[2rem] font-normal leading-snug">
             <div>
               <span className="relative inline-block">
                 <div className="absolute -top-4 left-1/2 z-10 flex -translate-x-1/2 gap-3">
-                  <div className="h-2 w-2 rounded-full bg-[#AFDB00]" />
-                  <div className="h-2 w-2 rounded-full bg-[#AFDB00]" />
+                  <Dot color="lime.400" />
                 </div>
-                <span className="text-[#AFDB00]">인성</span>
+                <span className="text-lime-400">인성</span>
               </span>
-              <span className="text-[#0C4A6E]">과 </span>
+              <span className="text-blue-700">과 </span>
               <span className="relative inline-block">
                 <div className="absolute -top-4 left-1/2 z-10 flex -translate-x-1/2 gap-3">
-                  <div className="h-2 w-2 rounded-full bg-[#AFDB00]" />
-                  <div className="h-2 w-2 rounded-full bg-[#AFDB00]" />
+                  <Dot color="lime.400" />
                 </div>
-                <span className="text-[#AFDB00]">감성</span>
+                <span className="text-lime-400">감성</span>
               </span>
               <span className="text-black">으로</span>{' '}
               <span className="relative inline-block">
                 <div className="absolute -top-4 left-1/2 z-10 flex -translate-x-1/2 gap-3">
-                  <div className="h-2 w-2 rounded-full bg-[#69ABFF]" />
-                  <div className="h-2 w-2 rounded-full bg-[#69ABFF]" />
+                  <Dot color="blue.200" />
                 </div>
-                <span className="text-[#69ABFF]">감동</span>
+                <span className="text-blue-200">감동</span>
               </span>
               <span className="text-black">을 만드는</span>
             </div>
@@ -232,15 +231,15 @@ export default function MainPage() {
         </section>
 
         {/* 섹션 3 */}
-        <div className="bg-[#F5F9FB]">
+        <div className="bg-gray-50">
           <section className="mx-auto max-w-[1200px] px-4 py-32">
             <div className="mb-12 flex max-w-[600px] flex-col gap-4">
-              <h2 className="mb-2 text-[2rem] font-extrabold leading-tight text-[#111827]">
+              <h2 className="mb-2 text-[2rem] font-extrabold leading-tight text-black">
                 창의 융합력을 갖춘
                 <br />
                 글로벌 소프트웨어 학과 소개
               </h2>
-              <p className="text-[1.25rem] font-normal text-[#657087]">
+              <p className="text-[1.25rem] font-normal text-gray-500">
                 체계적인 교육과정을 제공하는 소프트웨어 학과
               </p>
             </div>
