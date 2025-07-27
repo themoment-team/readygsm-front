@@ -1,5 +1,7 @@
-import NotFoundPage from '@/pageContainer/NotFoundPage';
+import { MainPage, NotFoundPage } from '@/pageContainer';
 
-export default function NotFound() {
+const NotFound = () => {
   return <NotFoundPage />;
-}
+};
+
+export default NotFound;
