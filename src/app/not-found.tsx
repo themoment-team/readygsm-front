@@ -1,4 +1,4 @@
-import { MainPage, NotFoundPage } from '@/pageContainer';
+import { NotFoundPage } from '@/pageContainer';
 
 const NotFound = () => {
   return <NotFoundPage />;
