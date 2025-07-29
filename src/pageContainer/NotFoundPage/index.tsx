@@ -33,9 +33,9 @@ const NotFoundPage = () => {
     >
       <div className={cn('relative flex flex-col items-center justify-center')}>
         <div className={cn('flex flex-row -space-x-3')}>
-          <Four color="lime.300" />
+          <Four color="#BEF264" />
           <Zero />
-          <Four color="blue.700" />
+          <Four color="#0C4A6E" />
         </div>
 
         <div className={cn('absolute left-[20rem] top-[90%]', 'flex flex-row gap-[0.97rem]')}>
