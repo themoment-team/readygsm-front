@@ -1,61 +1,53 @@
-import { Rami } from '@/assets';
 import { cn } from '@/lib/utils';
 
-const Adminmain = () => {
+const AdminMain = () => {
   return (
     <div
       className={cn(
-        'flex h-screen w-full flex-col items-center justify-center',
+        'flex h-screen',
+        'w-full',
+        'flex-col',
+        'items-center',
+        'justify-center',
         'gap-[0.5rem]',
-        'bg-background',
+        'bg-bgDefault',
       )}
     >
       <div
         className={cn(
-          'text-[var(--gray-700,#374151)]', // 텍스트 색상
-          'font-[Pretendard]', // 폰트 (또는 font-pretendard)
-          'text-[1.875rem]', // 폰트 크기
-          'not-italic', // 일반체
-          'font-semibold', // font-weight: 600
-          'leading-[2.25rem]', // 줄간격
+          'text-gray-700',
+          'font-[Pretendard]',
+          'text-[1.875rem]',
+          'not-italic',
+          'font-semibold',
+          'leading-[2.25rem]',
           'tracking-[-0.01406rem]',
           'flex',
-          'flex-row',
         )}
       >
-        <span>2025 &nbsp;</span>
-        <span className={cn('text-[var(--gray-700,#2563EB)]', 'relative')}>
+        <span>2025&nbsp;</span>
+        <span
+          className={cn(
+            'text-blue-600',
+            'relative',
+            'before:absolute',
+            "before:content-['•••']",
+            'before:tracking-[0.87rem]',
+            'before:-top-[1.275rem]',
+            'before:right-[0.2rem]',
+            'before:text-[1.25rem]',
+            'before:text-blue-100',
+          )}
+        >
           READY,GSM&nbsp;
-          <div
-            className={cn(
-              'flex',
-              'flex-row',
-              'gap-[0.88rem]',
-              'absolute',
-              'bottom-[2rem]',
-              'left-[7rem]',
-            )}
-          >
-            <Rami></Rami>
-            <Rami></Rami>
-            <Rami></Rami>
-          </div>
         </span>
-        <span>SERVICE </span>
+        <span>ADMIN SERVICE</span>
       </div>
-      <div
-        className={cn(
-          'text-[var(--gray-800,#1F2937)]',
-          'text-center',
-          'text-base',
-          'font-normal',
-          'leading-6',
-        )}
-      >
+      <div className={cn('text-gray-800', 'text-center', 'text-base', 'font-normal', 'leading-6')}>
         광주소프트웨어 마이스터고등학교 신청 서비스
       </div>
     </div>
   );
 };
 
-export default Adminmain;
+export default AdminMain;

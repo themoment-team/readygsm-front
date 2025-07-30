@@ -1,1 +1,1 @@
-export { default as Rami } from './rami';
+export { default as Circle } from './Circle';
