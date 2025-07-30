@@ -2,27 +2,30 @@
 
 import React from 'react';
 
-import { Dot } from '@/assets';
+import { Arrow, Dot } from '@/assets';
+import { cn } from '@/lib/utils';
 
-function FeatureBox(props: { text: React.ReactNode; emoji: string }) {
+const FeatureBox = (props: { text: React.ReactNode; emoji: string }) => {
   const { text, emoji } = props;
   return (
     <div
-      className="bg-[ relative mt-16 h-[250px] rounded-xl px-8 pb-6 pt-8 text-left"
+      className={cn('relative mt-16 h-[15.625rem] rounded-xl px-8 pb-6 pt-8 text-left')}
       style={{
         boxShadow: '0px 4px 20px 0px rgba(112, 144, 176, 0.12)',
       }}
     >
       <p
-        className="max-w-[360px] text-[1.2rem] font-semibold leading-[1.4] text-blue-700"
-        style={{ position: 'relative', left: '-20px' }}
+        className={cn('max-w-[22.5rem] text-[1.2rem] font-semibold leading-[1.4] text-blue-700')}
+        style={{ position: 'relative', left: '-1.25rem' }}
       >
         {text}{' '}
       </p>
-      <span className="absolute bottom-[38px] right-[15px] text-3xl text-[4.25rem]">{emoji}</span>
+      <span className={cn('absolute bottom-[2.375rem] right-[0.9375rem] text-3xl text-[4.25rem]')}>
+        {emoji}
+      </span>
     </div>
   );
-}
+};
 
 type FeatureProps = {
   imgSrc: string;
@@ -35,17 +38,23 @@ type FeatureProps = {
   };
 };
 
-function Feature({ imgSrc, title, tags, tagColor, description }: FeatureProps) {
+const Feature = ({ imgSrc, title, tags, tagColor, description }: FeatureProps) => {
   return (
-    <article className="rounded-[1rem] bg-gray-50">
-      <img src={imgSrc} alt={title} className="mb-6 h-[13rem] w-full rounded-[1rem] object-cover" />
-      <div className="p-4">
-        <h3 className="mb-4 whitespace-nowrap text-[1.5rem] font-semibold text-black">{title}</h3>
-        <div className="mb-3 flex w-max gap-2 overflow-x-auto">
+    <article className={cn('rounded-[1rem] bg-gray-50')}>
+      <img
+        src={imgSrc}
+        alt={title}
+        className={cn('mb-6 h-[13rem] w-full rounded-[1rem] object-cover')}
+      />
+      <div className={cn('p-4')}>
+        <h3 className={cn('mb-4 whitespace-nowrap text-[1.5rem] font-semibold text-black')}>
+          {title}
+        </h3>
+        <div className={cn('mb-3 flex w-max gap-2 overflow-x-auto')}>
           {tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full px-1.5 py-0.5 text-xs font-medium"
+              className={cn('rounded-full px-1.5 py-0.5 text-xs font-medium')}
               style={
                 tagColor
                   ? {
@@ -59,73 +68,66 @@ function Feature({ imgSrc, title, tags, tagColor, description }: FeatureProps) {
             </span>
           ))}
         </div>
-        <p className="text-[1.125rem] leading-relaxed text-gray-500">{description}</p>
+        <p className={cn('text-[1.125rem] leading-relaxed text-gray-500')}>{description}</p>
       </div>
     </article>
   );
-}
+};
 
 export default function MainPage() {
   return (
     <>
-      <div className="w-full">
+      <div className={cn('w-full')}>
         {/* 섹션 1 */}
         <section
-          className="relative h-screen bg-cover bg-center"
+          className={cn('relative h-screen bg-cover bg-center')}
           style={{ backgroundImage: "url('/background.png')" }}
         >
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 px-4 text-center">
-            <div className="text-white">
-              <h1 className="relative text-[2.25rem] font-bold leading-snug sm:text-[3.25rem]">
-                <div className="absolute -top-5 left-1/2 z-10 flex translate-x-[calc(-100%-73px)] gap-8">
-                  <div className="h-2 w-2 rounded-full bg-lime-300" />
-                  <div className="h-2 w-2 rounded-full bg-lime-300" />
-                  <div className="h-2 w-2 rounded-full bg-lime-300" />
+          <div
+            className={cn(
+              'absolute inset-0 flex flex-col items-center justify-center',
+              'bg-black/40 px-4 text-center',
+            )}
+          >
+            <div className={cn('text-white')}>
+              <h1
+                className={cn(
+                  'relative text-[2.25rem] font-bold leading-snug tablet:text-[3.25rem]',
+                )}
+              >
+                <div
+                  className={cn(
+                    'absolute -top-5 left-1/2 z-10 flex',
+                    'translate-x-[calc(-100%-73px)] gap-8',
+                  )}
+                >
+                  <div className={cn('h-2 w-2 rounded-full bg-lime-300')} />
+                  <div className={cn('h-2 w-2 rounded-full bg-lime-300')} />
+                  <div className={cn('h-2 w-2 rounded-full bg-lime-300')} />
                 </div>
-                <span className="text-blue-100">Ready GSM</span>과 함께 나에게 맞는
+                <span className={cn('text-blue-100')}>Ready GSM</span>과 함께 나에게 맞는
                 <br />
                 GSM을 직접 경험해보세요!
               </h1>
             </div>
           </div>
 
-          <div className="absolute left-1/2 top-[70%] flex -translate-x-1/2 flex-col items-center">
-            <div className="animate-elegant-bounce mt-2">
+          <div
+            className={cn(
+              'absolute left-1/2 top-[70%] flex -translate-x-1/2',
+              'flex-col items-center',
+            )}
+          >
+            <div className={cn('animate-elegant-bounce mt-2')}>
               <button
                 onClick={() => {
                   document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
                 }}
                 aria-label="특징으로 스크롤 이동"
+                className={cn('flex flex-col items-center gap-[0.25rem]')}
               >
-                <svg
-                  width="127"
-                  height="56"
-                  viewBox="0 0 127 56"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10.0713 11.334C9.86621 10.6484 9.50293 10.1152 8.98145 9.73438C8.46582 9.34766 7.82715 9.1543 7.06543 9.1543C6.37402 9.1543 5.76172 9.33008 5.22852 9.68164C4.69531 10.0273 4.2793 10.5371 3.98047 11.2109C3.68164 11.8848 3.53223 12.6875 3.53223 13.6191C3.53223 14.5684 3.68164 15.3828 3.98047 16.0625C4.2793 16.7363 4.69824 17.249 5.2373 17.6006C5.77637 17.9463 6.40332 18.1191 7.11816 18.1191C7.75098 18.1191 8.30469 17.999 8.7793 17.7588C9.25391 17.5127 9.62305 17.167 9.88672 16.7217C10.1504 16.2705 10.2881 15.7461 10.2998 15.1484H7.34668V13.3379H12.5146V14.8672C12.5146 15.9395 12.2832 16.877 11.8203 17.6797C11.3633 18.4766 10.7275 19.0918 9.91309 19.5254C9.09863 19.959 8.16699 20.1758 7.11816 20.1758C5.95215 20.1758 4.92383 19.9121 4.0332 19.3848C3.14258 18.8516 2.45117 18.0928 1.95898 17.1084C1.47266 16.124 1.22949 14.9668 1.22949 13.6367C1.22949 12.3066 1.47852 11.1494 1.97656 10.165C2.48047 9.1748 3.17188 8.41602 4.05078 7.88867C4.93555 7.36133 5.93457 7.09766 7.04785 7.09766C7.97363 7.09766 8.82031 7.27637 9.58789 7.63379C10.3555 7.99121 10.9854 8.49219 11.4775 9.13672C11.9697 9.77539 12.2803 10.5078 12.4092 11.334H10.0713ZM21.5146 10.7715C21.4619 10.2324 21.2188 9.81055 20.7852 9.50586C20.3574 9.20117 19.7979 9.04883 19.1064 9.04883C18.6377 9.04883 18.2275 9.11914 17.876 9.25977C17.5244 9.40039 17.2549 9.59668 17.0674 9.84863C16.8799 10.1006 16.7861 10.3848 16.7861 10.7012C16.7861 11.1875 16.9883 11.5654 17.3926 11.835C17.7969 12.0986 18.3213 12.3066 18.9658 12.459L20.1611 12.7754C21.2568 13.0273 22.1504 13.4463 22.8418 14.0322C23.5391 14.6123 23.8877 15.4121 23.8877 16.4316C23.8877 17.1758 23.6973 17.832 23.3164 18.4004C22.9355 18.9688 22.3818 19.4111 21.6553 19.7275C20.9346 20.0381 20.0732 20.1934 19.0713 20.1934C18.0811 20.1934 17.2227 20.041 16.4961 19.7363C15.7695 19.4258 15.2012 18.9775 14.791 18.3916C14.3867 17.7998 14.167 17.0879 14.1318 16.2559H16.3818C16.4346 16.9004 16.7041 17.3926 17.1904 17.7324C17.6826 18.0723 18.3037 18.2422 19.0537 18.2422C19.5518 18.2422 19.9941 18.166 20.3809 18.0137C20.7676 17.8613 21.0664 17.6475 21.2773 17.3721C21.4941 17.0908 21.6025 16.7715 21.6025 16.4141C21.6025 15.9512 21.4092 15.5908 21.0225 15.333C20.6416 15.0693 20.0674 14.8379 19.2998 14.6387L17.8584 14.2695C15.5967 13.6777 14.4658 12.5352 14.4658 10.8418C14.4658 10.1035 14.668 9.45312 15.0723 8.89062C15.4766 8.32227 16.0332 7.88281 16.7422 7.57227C17.457 7.25586 18.2568 7.09766 19.1416 7.09766C20.0322 7.09766 20.8203 7.25586 21.5059 7.57227C22.1973 7.88281 22.7334 8.31641 23.1143 8.87305C23.501 9.42969 23.7002 10.0625 23.7119 10.7715H21.5146ZM28.5986 7.27344L32.3779 16.5195H32.5361L36.3154 7.27344H39.1279V20H36.9307V11.2461H36.8076L33.2744 19.9648H31.6396L28.1064 11.2109H28.001V20H25.7861V7.27344H28.5986ZM53.1377 8.71484H47.8467V16.1152C49.1475 16.1035 50.2695 16.0625 51.2129 15.9922C52.1562 15.9219 53.1025 15.7988 54.0518 15.623L54.2627 17.2051C53.2021 17.416 52.1475 17.5566 51.0986 17.627C50.0498 17.6973 48.7314 17.7324 47.1436 17.7324H45.8779V7.11523H53.1377V8.71484ZM58.4463 21.582H56.4951V12.8633H52.2939V11.2637H56.4951V5.67383H58.4463V21.582ZM77.4658 8.87305H79.6807V10.4902H77.4658V13.6543H75.5146V5.67383H77.4658V8.87305ZM77.4658 18.5059H69.0283V19.8242H77.958V21.3711H67.0947V17.082H75.5146V15.8516H67.0771V14.3398H77.4658V18.5059ZM69.3271 6.20117C70.1299 6.20117 70.8506 6.35352 71.4893 6.6582C72.1279 6.95703 72.6289 7.37891 72.9922 7.92383C73.3555 8.46289 73.54 9.07812 73.5459 9.76953C73.54 10.4492 73.3555 11.0615 72.9922 11.6064C72.6289 12.1455 72.125 12.5674 71.4805 12.8721C70.8418 13.1709 70.124 13.3203 69.3271 13.3203C68.5244 13.3203 67.8008 13.168 67.1562 12.8633C66.5176 12.5586 66.0137 12.1367 65.6445 11.5977C65.2812 11.0586 65.1025 10.4492 65.1084 9.76953C65.1025 9.07812 65.2812 8.46289 65.6445 7.92383C66.0078 7.37891 66.5117 6.95703 67.1562 6.6582C67.8008 6.35352 68.5244 6.20117 69.3271 6.20117ZM69.3271 7.7832C68.8818 7.7832 68.4834 7.86523 68.1318 8.0293C67.7803 8.19336 67.5049 8.4248 67.3057 8.72363C67.1123 9.02246 67.0186 9.37109 67.0244 9.76953C67.0186 10.1621 67.1123 10.5107 67.3057 10.8154C67.5049 11.1201 67.7803 11.3574 68.1318 11.5273C68.4834 11.6914 68.8818 11.7734 69.3271 11.7734C69.7666 11.7734 70.1621 11.6914 70.5137 11.5273C70.8711 11.3574 71.1494 11.1201 71.3486 10.8154C71.5479 10.5107 71.6475 10.1621 71.6475 9.76953C71.6475 9.37109 71.5479 9.02246 71.3486 8.72363C71.1494 8.4248 70.874 8.19336 70.5225 8.0293C70.1709 7.86523 69.7725 7.7832 69.3271 7.7832ZM84.7607 6.83398C85.5576 6.83398 86.2666 7.06543 86.8877 7.52832C87.5088 7.98535 87.9951 8.63867 88.3467 9.48828C88.7041 10.332 88.8857 11.3164 88.8916 12.4414C88.8857 13.5781 88.7041 14.5713 88.3467 15.4209C87.9951 16.2705 87.5088 16.9238 86.8877 17.3809C86.2666 17.8379 85.5576 18.0664 84.7607 18.0664C83.958 18.0664 83.2432 17.8379 82.6162 17.3809C81.9893 16.918 81.5 16.2617 81.1484 15.4121C80.7969 14.5625 80.624 13.5723 80.6299 12.4414C80.624 11.3223 80.7969 10.3379 81.1484 9.48828C81.5 8.63867 81.9893 7.98535 82.6162 7.52832C83.2432 7.06543 83.958 6.83398 84.7607 6.83398ZM84.7607 8.5918C84.3154 8.5918 83.9229 8.74707 83.583 9.05762C83.2432 9.3623 82.9795 9.80469 82.792 10.3848C82.6045 10.959 82.5107 11.6445 82.5107 12.4414C82.5107 13.2441 82.6045 13.9355 82.792 14.5156C82.9795 15.0957 83.2432 15.541 83.583 15.8516C83.9229 16.1562 84.3154 16.3086 84.7607 16.3086C85.2119 16.3086 85.6074 16.1562 85.9473 15.8516C86.2871 15.541 86.5479 15.0957 86.7295 14.5156C86.917 13.9355 87.0107 13.2441 87.0107 12.4414C87.0107 11.6445 86.917 10.9561 86.7295 10.376C86.5479 9.7959 86.2871 9.35352 85.9473 9.04883C85.6074 8.74414 85.2119 8.5918 84.7607 8.5918ZM92.9346 11.7734H95.3779V13.4258H92.9346V21.5645H90.9834V5.67383H92.9346V11.7734ZM110.565 19.6484H96.0459V18.0488H102.304V14.9551H97.6455V6.72852H99.5967V9.33008H106.962V6.72852H108.913V14.9551H104.237V18.0488H110.565V19.6484ZM106.962 13.373V10.8945H99.5967V13.373H106.962ZM124.874 21.5645H122.905V5.67383H124.874V21.5645ZM120.128 7.36133C120.128 9.88672 119.557 12.1045 118.414 14.0146C117.271 15.9189 115.376 17.498 112.728 18.752L111.708 17.1875C113.753 16.2148 115.291 15.0518 116.322 13.6982C117.359 12.3389 117.966 10.7422 118.142 8.9082H112.517V7.36133H120.128Z"
-                    fill="white"
-                  />
-                  <mask
-                    id="mask0_882_5311"
-                    style={{ maskType: 'alpha' }}
-                    maskUnits="userSpaceOnUse"
-                    x="51"
-                    y="32"
-                    width="25"
-                    height="24"
-                  >
-                    <rect x="51.5" y="32" width="24" height="24" fill="#D9D9D9" />
-                  </mask>
-                  <g mask="url(#mask0_882_5311)">
-                    <path
-                      d="M63.5 48.5113L67.5731 44.4535C67.7116 44.3151 67.883 44.2417 68.0875 44.2334C68.292 44.225 68.4718 44.2984 68.6269 44.4535C68.7718 44.5984 68.8442 44.774 68.8442 44.9805C68.8442 45.1869 68.7718 45.3625 68.6269 45.5074L64.1327 50.0016C64.0391 50.0952 63.9404 50.1612 63.8365 50.1997C63.7327 50.2381 63.6205 50.2574 63.5 50.2574C63.3795 50.2574 63.2673 50.2381 63.1635 50.1997C63.0596 50.1612 62.9609 50.0952 62.8673 50.0016L58.3731 45.5074C58.2347 45.3689 58.1613 45.1974 58.1529 44.993C58.1446 44.7885 58.218 44.6087 58.3731 44.4535C58.518 44.3087 58.6936 44.2362 58.9 44.2362C59.1064 44.2362 59.2821 44.3087 59.4269 44.4535L63.5 48.5113ZM63.5 42.5305L67.5731 38.4728C67.7116 38.3343 67.883 38.2609 68.0875 38.2526C68.292 38.2443 68.4718 38.3177 68.6269 38.4728C68.7718 38.6177 68.8442 38.7933 68.8442 38.9997C68.8442 39.2061 68.7718 39.3817 68.6269 39.5266L64.1327 44.0208C64.0391 44.1144 63.9404 44.1804 63.8365 44.2189C63.7327 44.2574 63.6205 44.2766 63.5 44.2766C63.3795 44.2766 63.2673 44.2574 63.1635 44.2189C63.0596 44.1804 62.9609 44.1144 62.8673 44.0208L58.3731 39.5266C58.2347 39.3881 58.1613 39.2167 58.1529 39.0122C58.1446 38.8077 58.218 38.6279 58.3731 38.4728C58.518 38.3279 58.6936 38.2555 58.9 38.2555C59.1064 38.2555 59.2821 38.3279 59.4269 38.4728L63.5 42.5305Z"
-                      fill="white"
-                    />
-                  </g>
-                </svg>
+                <span className={cn('text-lg font-semibold text-white')}>GSM 더 알아보기</span>
+                <Arrow />
               </button>
             </div>
           </div>
@@ -154,36 +156,45 @@ export default function MainPage() {
         {/* 섹션 2 */}
         <section
           id="features"
-          className="flex min-h-screen flex-col items-center justify-center bg-gray-50 px-4 py-20"
+          className={cn(
+            'flex min-h-screen flex-col items-center justify-center',
+            'bg-gray-50 px-4 py-20',
+          )}
         >
-          <div className="text-center text-[2rem] font-normal leading-snug">
+          <div className={cn('text-center text-[2rem] font-normal leading-snug')}>
             <div>
-              <span className="relative inline-block">
-                <div className="absolute -top-4 left-1/2 z-10 flex -translate-x-1/2 gap-3">
-                  <Dot color="lime.400" />
+              <span className={cn('relative inline-block')}>
+                <div className={cn('absolute -top-4 left-1/2 z-10 flex', '-translate-x-1/2 gap-3')}>
+                  <Dot color="#AFDB00" />
                 </div>
-                <span className="text-lime-400">인성</span>
+                <span className={cn('text-lime-400')}>인성</span>
               </span>
-              <span className="text-blue-700">과 </span>
-              <span className="relative inline-block">
-                <div className="absolute -top-4 left-1/2 z-10 flex -translate-x-1/2 gap-3">
-                  <Dot color="lime.400" />
+              <span className={cn('text-blue-700')}>과 </span>
+              <span className={cn('relative inline-block')}>
+                <div className={cn('absolute -top-4 left-1/2 z-10 flex', '-translate-x-1/2 gap-3')}>
+                  <Dot color="#AFDB00" />
                 </div>
-                <span className="text-lime-400">감성</span>
+                <span className={cn('text-lime-400')}>감성</span>
               </span>
-              <span className="text-black">으로</span>{' '}
-              <span className="relative inline-block">
-                <div className="absolute -top-4 left-1/2 z-10 flex -translate-x-1/2 gap-3">
-                  <Dot color="blue.200" />
+              <span className={cn('text-black')}>으로</span>{' '}
+              <span className={cn('relative inline-block')}>
+                <div className={cn('absolute -top-4 left-1/2 z-10 flex', '-translate-x-1/2 gap-3')}>
+                  <Dot color="#3DAEFF" />
                 </div>
-                <span className="text-blue-200">감동</span>
+                <span className={cn('text-blue-200')}>감동</span>
               </span>
-              <span className="text-black">을 만드는</span>
+              <span className={cn('text-black')}>을 만드는</span>
             </div>
-            <div className="mt-1">광주소프트웨어마이스터고등학교</div>
+            <div className={cn('mt-1')}>광주소프트웨어마이스터고등학교</div>
           </div>
 
-          <div className="grid w-full max-w-6xl grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-4">
+          <div
+            className={cn(
+              'grid w-full max-w-6xl grid-cols-1 gap-3',
+              'mobile-lg:grid-cols-2',
+              'tablet:grid-cols-4',
+            )}
+          >
             <FeatureBox
               text={
                 <>
@@ -231,20 +242,32 @@ export default function MainPage() {
         </section>
 
         {/* 섹션 3 */}
-        <div className="bg-gray-50">
-          <section className="mx-auto max-w-[1200px] px-4 py-32">
-            <div className="mb-12 flex max-w-[600px] flex-col gap-4">
-              <h2 className="mb-2 text-[2rem] font-extrabold leading-tight text-black">
+        <div className={cn('bg-gray-50')}>
+          <section className={cn('mx-auto', 'max-w-[75rem]', 'px-[1rem]', 'py-[8rem]')}>
+            <div className={cn('mb-[3rem]', 'flex max-w-[37.5rem]', 'flex-col gap-[1rem]')}>
+              <h2
+                className={cn(
+                  'mb-[0.5rem]',
+                  'text-[2rem]',
+                  'font-extrabold',
+                  'leading-tight',
+                  'text-black',
+                )}
+              >
                 창의 융합력을 갖춘
                 <br />
                 글로벌 소프트웨어 학과 소개
               </h2>
-              <p className="text-[1.25rem] font-normal text-gray-500">
+              <p className={cn('text-[1.25rem]', 'font-normal', 'text-gray-500')}>
                 체계적인 교육과정을 제공하는 소프트웨어 학과
               </p>
             </div>
 
-            <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
+            <div
+              className={cn(
+                'grid grid-cols-1 gap-[2rem] mobile:grid-cols-1 mobile-lg:grid-cols-2 tablet-sm:grid-cols-2 tablet:grid-cols-3',
+              )}
+            >
               <Feature
                 imgSrc="/software.png"
                 title="소프트웨어 개발과"
