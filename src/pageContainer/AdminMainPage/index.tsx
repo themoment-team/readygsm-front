@@ -1,3 +1,4 @@
+import { Circle } from '@/assets';
 import { cn } from '@/lib/utils';
 
 const AdminMainPage = () => {
@@ -27,20 +28,13 @@ const AdminMainPage = () => {
         )}
       >
         <span>2025&nbsp;</span>
-        <span
-          className={cn(
-            'text-blue-600',
-            'relative',
-            'before:absolute',
-            "before:content-['•••']",
-            'before:tracking-[0.87rem]',
-            'before:-top-[1.275rem]',
-            'before:right-[0.2rem]',
-            'before:text-[1.25rem]',
-            'before:text-blue-100',
-          )}
-        >
+        <span className={cn('text-blue-600', 'relative')}>
           READY,GSM&nbsp;
+          <div className={cn('flex', 'gap-[0.88rem]', 'absolute', 'bottom-[2rem]', 'left-[7rem]')}>
+            <Circle />
+            <Circle />
+            <Circle />
+          </div>
         </span>
         <span>ADMIN SERVICE</span>
       </div>
