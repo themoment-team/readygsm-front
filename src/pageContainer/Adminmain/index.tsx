@@ -4,7 +4,8 @@ const AdminMain = () => {
   return (
     <div
       className={cn(
-        'flex h-screen',
+        'flex',
+        'h-screen',
         'w-full',
         'flex-col',
         'items-center',
