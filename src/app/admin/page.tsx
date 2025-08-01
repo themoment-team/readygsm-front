@@ -1,7 +1,7 @@
-import { AdminMain } from '@/pageContainer';
+import { AdminMainPage } from '@/pageContainer';
 
-const AdminMainPage = () => {
-  return <AdminMain />;
+const AdminMain = () => {
+  return <AdminMainPage />;
 };
 
-export default AdminMainPage;
+export default AdminMain;

@@ -1,2 +1,2 @@
 export { default as MainPage } from './MainPage';
-export { default as AdminMain } from './AdminMain';
+export { default as AdminMainPage } from './AdminMainPage';

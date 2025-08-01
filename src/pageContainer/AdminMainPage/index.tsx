@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-const AdminMain = () => {
+const AdminMainPage = () => {
   return (
     <div
       className={cn(
@@ -51,4 +51,4 @@ const AdminMain = () => {
   );
 };
 
-export default AdminMain;
+export default AdminMainPage;
