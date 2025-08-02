@@ -19,7 +19,6 @@ const AdminMainPage = () => {
         className={cn(
           'text-gray-700',
           'text-[1.875rem]',
-          'not-italic',
           'font-semibold',
           'leading-[2.25rem]',
           'tracking-[-0.01406rem]',
