@@ -8,24 +8,21 @@ const Footer = () => {
     <footer
       className={cn(
         'bg-gray-50',
-        'px-[21.25rem]',
+        'px-[5rem]',
         'py-[3.75rem]',
         'text-[0.8125rem]',
         'text-gray-400',
         'tablet-sm:px-[3.75rem]',
-        'px-[5rem]',
       )}
     >
       <div
         className={cn(
-          'mx-auto',
           'flex',
-          'max-w-7xl',
+          'w-full',
           'flex-col',
           'justify-between',
-          'gap-8',
           'mobile-lg:flex-row',
-          'tablet-sm:flex-row',
+          // 'tablet-sm:flex-row',  // tablet-sm이 mobile-lg보다 크다면 이 줄은 없어도 됨
         )}
       >
         <div
@@ -47,7 +44,8 @@ const Footer = () => {
             'items-end',
             'text-[0.8125rem]',
             'text-gray-600',
-            'tablet-sm:items-end',
+            'text-right',
+            'w-full',
           )}
         >
           <div className={cn('text-[1.125rem]', 'font-[500]', 'text-gray-500')}>
@@ -61,7 +59,6 @@ const Footer = () => {
               'gap-6',
               'text-[1.25rem]',
               'font-[700]',
-              'text-gray-600',
               'tablet-sm:justify-end',
             )}
           >
