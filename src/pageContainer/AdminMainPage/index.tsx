@@ -18,7 +18,6 @@ const AdminMainPage = () => {
       <div
         className={cn(
           'text-gray-700',
-          'font-[Pretendard]',
           'text-[1.875rem]',
           'not-italic',
           'font-semibold',
