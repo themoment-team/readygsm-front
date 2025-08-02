@@ -10,7 +10,6 @@ const Footer = () => {
         'bg-gray-50',
         'text-[0.8125rem]',
         'text-gray-400',
-
         'py-[3.75rem]',
         'px-[1rem]',
         'mobile-lg:px-[1.5rem]',
@@ -24,15 +23,7 @@ const Footer = () => {
       )}
     >
       <div className={cn('flex', 'w-full', 'flex-col', 'justify-between', 'mobile-lg:flex-row')}>
-        <div
-          className={cn(
-            'hidden',
-            'mobile:hidden',
-            'tablet-sm:flex',
-            'tablet-sm:flex-col',
-            'tablet-sm:items-end',
-          )}
-        >
+        <div className={cn('hidden', 'tablet:flex', 'flex-col', 'items-end')}>
           <Logo />
         </div>
 
