@@ -6,6 +6,10 @@ import { Person } from '@/assets';
 import { get } from '@/lib/api';
 import { cn } from '@/lib/utils';
 
+interface HelloProps {
+  email: string;
+}
+
 interface Users {
   email: string;
   reservations: {
@@ -15,15 +19,15 @@ interface Users {
   }[];
 }
 
-interface BoxProps {
-  reservations: {
-    activityMajor: string;
-    activityPlace: string; // ← string으로 수정
-    activityType: string;
-  }[];
-}
+// interface BoxProps {
+//   reservations: {
+//     activityMajor: string;
+//     activityPlace: string;
+//     activityType: string;
+//   }[];
+// }
 
-const Hello = ({ email }: Users) => {
+const Hello = ({ email }: HelloProps) => {
   return (
     <div className={cn('flex', 'flex-col', 'justify-center', 'items-center', 'gap-[1.25rem]')}>
       <div
@@ -56,36 +60,9 @@ const Hello = ({ email }: Users) => {
   );
 };
 
-const Box = ({ reservations }: BoxProps) => {
-  // 신청된 활동이 없으면 메시지 출력
-  if (reservations.length === 0) {
-    return (
-      <div className={cn('text-[#8A8A8A]', 'text-[1.5rem]', 'font-normal')}>
-        신청된 프로그램이 없습니다
-      </div>
-    );
-  }
-  //// 컴포넌트 작업 후 작업 예정
-
-  // return (
-  //   <div>
-  //     {reservations.map((x, index) => (
-  //       <div key={index}>
-  //         {/* activityMajor 기준으로 컴포넌트 분기 */}
-  //         {x.activityMajor === 'SW' ? (
-  //           <Sw />
-  //         ) : x.activityMajor === 'IoT' ? (
-  //           <IoT />
-  //         ) : x.activityMajor === 'AI' ? (
-  //           <Ai />
-  //         ) : (
-  //           <div>알 수 없는 활동입니다</div>
-  //         )}
-  //       </div>
-  //     ))}
-  //   </div>
-  // );
-};
+// const Box = ({ reservations }: BoxProps) => {
+//   return <div>asdf</div>;
+// };
 
 const ProfilePage = () => {
   const [users, setUsers] = useState<Users | null>(null);
@@ -96,7 +73,7 @@ const ProfilePage = () => {
         const res = await get<Users>('/api/v1/users/me');
         setUsers(res);
       } catch (err) {
-        console.error('에러 발생:', err);
+        console.error(err);
       }
     };
     fetchData();
@@ -117,11 +94,15 @@ const ProfilePage = () => {
               'text-[1.5rem]',
               'leading-[1.5rem]',
               'font-medium',
+              'p-[1.25rem]',
+              'mobile:p-[2rem]',
+              'mobile-lg:p-[1.25rem]',
+              'mobile:sm-[1.5rem]',
             )}
           >
             신청된 프로그램
           </div>
-          <Box reservations={users?.reservations ?? []} />
+          {/* <Box reservations={users?.reservations ?? []} /> */}
         </div>
       </div>
     </div>
