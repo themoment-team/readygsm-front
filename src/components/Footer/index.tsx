@@ -23,7 +23,7 @@ const Footer = () => {
       )}
     >
       <div className={cn('flex', 'w-full', 'flex-col', 'justify-between', 'mobile-lg:flex-row')}>
-        <div className={cn('hidden', 'tablet:flex', 'flex-col', 'items-end')}>
+        <div className={cn('hidden', 'tablet:flex', 'items-center', 'items-end')}>
           <Logo />
         </div>
 
