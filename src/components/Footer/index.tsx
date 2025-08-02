@@ -8,23 +8,22 @@ const Footer = () => {
     <footer
       className={cn(
         'bg-gray-50',
-        'px-[5rem]',
-        'py-[3.75rem]',
         'text-[0.8125rem]',
         'text-gray-400',
-        'tablet-sm:px-[3.75rem]',
+
+        'py-[3.75rem]',
+        'px-[1rem]',
+        'mobile-lg:px-[1.5rem]',
+        'tablet-sm:px-[2rem]',
+        'tablet:px-[5rem]',
+        'tablet-lg:px-[5rem]',
+        'desktop-sm:px-[5rem]',
+        'desktop:px-[5rem]',
+        'desktop-lg:px-[14rem]',
+        'desktop-xl:px-[21.25rem]',
       )}
     >
-      <div
-        className={cn(
-          'flex',
-          'w-full',
-          'flex-col',
-          'justify-between',
-          'mobile-lg:flex-row',
-          // 'tablet-sm:flex-row',  // tablet-sm이 mobile-lg보다 크다면 이 줄은 없어도 됨
-        )}
-      >
+      <div className={cn('flex', 'w-full', 'flex-col', 'justify-between', 'mobile-lg:flex-row')}>
         <div
           className={cn(
             'hidden',
