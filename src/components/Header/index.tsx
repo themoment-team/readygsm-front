@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { ReadyGSMLogo } from '@/assets';
+import { ReadyGSMLogo, ReadyGSMText } from '@/assets';
 import { cn } from '@/lib/utils';
 
 import ActiveLink from '../ActiveLink';
@@ -20,7 +20,7 @@ const activeStyle = [
   'after:rounded-lg',
 ];
 
-const activeTextStyle = ['relative', 'text-[0.875rem]/[1.5rem]', 'md:text-[1.125rem]/[1.75rem]'];
+const activeTextStyle = ['relative', 'text-[1.125rem]/[1.75rem]'];
 
 const Header = () => {
   const links = [
@@ -34,7 +34,14 @@ const Header = () => {
     <header
       className={cn(
         'h-[4.5rem]',
-        'px-[16rem]',
+        'px-[2rem]',
+        'tablet-sm:px-[1rem]',
+        'tablet:px-[2.5rem]',
+        'tablet-lg:px-[4.5rem]',
+        'desktop-sm:px-[8.5rem]',
+        'desktop:px-[12.5rem]',
+        'desktop-lg:px-[16rem]',
+        'desktop-xl:px-[20rem]',
         'sticky',
         'top-0',
         'bg-white',
@@ -44,15 +51,34 @@ const Header = () => {
         'justify-between',
       )}
     >
-      <div className={cn('flex', 'gap-[7.75rem]', 'items-center')}>
+      <div
+        className={cn(
+          'flex',
+          'gap-[2rem]',
+          'tablet:gap-[2.5rem]',
+          'tablet-lg:gap-[4rem]',
+          'desktop:gap-[5rem]',
+          'desktop-lg:gap-[8.75rem]',
+          'items-center',
+        )}
+      >
         <Link href="/">
-          <ReadyGSMLogo />
+          <div className={cn('hidden', 'tablet-sm:block')}>
+            <ReadyGSMLogo />
+          </div>
+          <div className={cn('block', 'tablet-sm:hidden')}>
+            <ReadyGSMText />
+          </div>
         </Link>
         <nav
           className={cn(
-            'gap-[2.75rem]',
+            'gap-[2rem]',
+            'tablet:gap-[3rem]',
+            'tablet-lg:gap-[3.25rem]',
+            'desktop:gap-[3.75rem]',
+            'desktop-lg:gap-[4rem]',
             'hidden',
-            'md:flex',
+            'tablet-sm:flex',
             'justify-between',
             'text-lg',
             'font-[600]',
