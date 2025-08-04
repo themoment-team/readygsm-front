@@ -5,8 +5,6 @@ import { cn } from '@/lib/utils';
 
 import FeatureBox from './FeatureBox';
 
-// FeatureBox 컴포넌트는 따로 분리하거나 이 폴더에 두세요.
-
 export default function Section2() {
   return (
     <section
