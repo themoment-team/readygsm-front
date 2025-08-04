@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 
-import { Arrow2, Four, Zero } from '@/assets';
+import { BackIcon, Four, Zero } from '@/assets';
 import { cn } from '@/lib/utils';
 
 const squares = [
@@ -112,7 +112,7 @@ const NotFoundPage = () => {
           'hover:bg-gray-100',
         )}
       >
-        <Arrow2 />
+        <BackIcon />
         <p className={cn('text-gray-400', 'mobile:text-xs', 'mobile-lg:text-sm', 'sm:text-[1rem]')}>
           돌아가기
         </p>

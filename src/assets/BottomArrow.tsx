@@ -1,4 +1,4 @@
-const Arrow = () => {
+const BottomArrow = () => {
   return (
     <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <mask
@@ -22,4 +22,4 @@ const Arrow = () => {
   );
 };
 
-export default Arrow;
+export default BottomArrow;

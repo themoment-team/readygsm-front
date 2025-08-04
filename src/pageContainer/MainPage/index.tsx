@@ -1,24 +1,47 @@
 'use client';
 
-import { Arrow, Dot } from '@/assets';
+import { BottomArrow, Dot } from '@/assets';
 import { cn } from '@/lib/utils';
 
 const FeatureBox = (props: { text: React.ReactNode; emoji: string }) => {
   const { text, emoji } = props;
   return (
     <div
-      className={cn('relative mt-16 h-[15.625rem] rounded-xl px-8 pb-6 pt-8 text-left')}
+      className={cn(
+        'relative',
+        'mt-16',
+        'h-[15.625rem]',
+        'rounded-xl',
+        'px-8',
+        'pb-6',
+        'pt-8',
+        'text-left',
+      )}
       style={{
         boxShadow: '0px 4px 20px 0px rgba(112, 144, 176, 0.12)',
       }}
     >
       <p
-        className={cn('max-w-[22.5rem] text-[1.2rem] font-semibold leading-[1.4] text-blue-700')}
+        className={cn(
+          'max-w-[22.5rem]',
+          'text-[1.2rem]',
+          'font-semibold',
+          'leading-[1.4]',
+          'text-blue-700',
+        )}
         style={{ position: 'relative', left: '-1.25rem' }}
       >
         {text}{' '}
       </p>
-      <span className={cn('absolute bottom-[2.375rem] right-[0.9375rem] text-3xl text-[4.25rem]')}>
+      <span
+        className={cn(
+          'absolute',
+          'bottom-[2.375rem]',
+          'right-[0.9375rem]',
+          'text-3xl',
+          'text-[4.25rem]',
+        )}
+      >
         {emoji}
       </span>
     </div>
@@ -38,21 +61,29 @@ type FeatureProps = {
 
 const Feature = ({ imgSrc, title, tags, tagColor, description }: FeatureProps) => {
   return (
-    <article className={cn('rounded-[1rem] bg-gray-50')}>
+    <article className={cn('rounded-[1rem]', 'bg-gray-50')}>
       <img
         src={imgSrc}
         alt={title}
-        className={cn('mb-6 h-[13rem] w-full rounded-[1rem] object-cover')}
+        className={cn('mb-6', 'h-[13rem]', 'w-full', 'rounded-[1rem]', 'object-cover')}
       />
       <div className={cn('p-4')}>
-        <h3 className={cn('mb-4 whitespace-nowrap text-[1.5rem] font-semibold text-black')}>
+        <h3
+          className={cn(
+            'mb-4',
+            'whitespace-nowrap',
+            'text-[1.5rem]',
+            'font-semibold',
+            'text-black',
+          )}
+        >
           {title}
         </h3>
-        <div className={cn('mb-3 flex w-max gap-2 overflow-x-auto')}>
+        <div className={cn('mb-3', 'flex', 'w-max', 'gap-2', 'overflow-x-auto')}>
           {tags.map((tag) => (
             <span
               key={tag}
-              className={cn('rounded-full px-1.5 py-0.5 text-xs font-medium')}
+              className={cn('rounded-full', 'px-1.5', 'py-0.5', 'text-[0.875rem]', 'font-medium')}
               style={
                 tagColor
                   ? {
@@ -66,7 +97,7 @@ const Feature = ({ imgSrc, title, tags, tagColor, description }: FeatureProps) =
             </span>
           ))}
         </div>
-        <p className={cn('text-[1.125rem] leading-relaxed text-gray-500')}>{description}</p>
+        <p className={cn('text-[1.125rem]', 'leading-relaxed', 'text-gray-500')}>{description}</p>
       </div>
     </article>
   );
@@ -78,30 +109,46 @@ export default function MainPage() {
       <div className={cn('w-full')}>
         {/* 섹션 1 */}
         <section
-          className={cn('relative h-screen bg-cover bg-center')}
+          className={cn('relative', 'h-screen', 'bg-cover', 'bg-center')}
           style={{ backgroundImage: "url('/background.png')" }}
         >
           <div
             className={cn(
-              'absolute inset-0 flex flex-col items-center justify-center',
-              'bg-black/40 px-4 text-center',
+              'absolute',
+              'inset-0',
+              'flex',
+              'flex-col',
+              'items-center',
+              'justify-center',
+              'bg-black/40',
+              'px-4',
+              'text-center',
             )}
           >
             <div className={cn('text-white')}>
               <h1
                 className={cn(
-                  'relative text-[2.25rem] font-bold leading-snug tablet:text-[3.25rem]',
+                  'relative',
+                  'text-[2.25rem]',
+                  'font-bold',
+                  'leading-snug',
+                  'tablet:text-[3.25rem]',
                 )}
               >
                 <div
                   className={cn(
-                    'absolute -top-5 left-1/2 z-10 flex',
-                    'translate-x-[calc(-100%-73px)] gap-8',
+                    'absolute',
+                    '-top-5',
+                    'left-1/2',
+                    'z-10',
+                    'flex',
+                    'translate-x-[calc(-100%-73px)]',
+                    'gap-8',
                   )}
                 >
-                  <div className={cn('h-2 w-2 rounded-full bg-lime-300')} />
-                  <div className={cn('h-2 w-2 rounded-full bg-lime-300')} />
-                  <div className={cn('h-2 w-2 rounded-full bg-lime-300')} />
+                  <div className={cn('h-2', 'w-2', 'rounded-full', 'bg-lime-300')} />
+                  <div className={cn('h-2', 'w-2', 'rounded-full', 'bg-lime-300')} />
+                  <div className={cn('h-2', 'w-2', 'rounded-full', 'bg-lime-300')} />
                 </div>
                 <span className={cn('text-blue-100')}>Ready GSM</span>과 함께 나에게 맞는
                 <br />
@@ -112,19 +159,26 @@ export default function MainPage() {
 
           <div
             className={cn(
-              'absolute left-1/2 top-[70%] flex -translate-x-1/2',
-              'flex-col items-center',
+              'absolute',
+              'left-1/2',
+              'top-[70%]',
+              'flex',
+              '-translate-x-1/2',
+              'flex-col',
+              'items-center',
             )}
           >
-            <div className={cn('animate-elegant-bounce mt-2')}>
+            <div className={cn('animate-elegant-bounce', 'mt-2')}>
               <button
                 onClick={() => {
                   document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className={cn('flex flex-col items-center gap-[0.25rem]')}
+                className={cn('flex', 'flex-col', 'items-center', 'gap-[0.25rem]')}
               >
-                <span className={cn('text-lg font-semibold text-white')}>GSM 더 알아보기</span>
-                <Arrow />
+                <span className={cn('text-lg', 'font-semibold', 'text-white')}>
+                  GSM 더 알아보기
+                </span>
+                <BottomArrow />
               </button>
             </div>
           </div>
@@ -154,28 +208,64 @@ export default function MainPage() {
         <section
           id="features"
           className={cn(
-            'flex min-h-screen flex-col items-center justify-center',
-            'bg-gray-50 px-4 py-20',
+            'flex',
+            'min-h-screen',
+            'flex-col',
+            'items-center',
+            'justify-center',
+            'bg-gray-50',
+            'px-4',
+            'py-20',
           )}
         >
-          <div className={cn('text-center text-[2rem] font-normal leading-snug')}>
+          <div className={cn('text-center', 'text-[2rem]', 'font-[600]', 'leading-snug')}>
             <div>
-              <span className={cn('relative inline-block')}>
-                <div className={cn('absolute -top-4 left-1/2 z-10 flex', '-translate-x-1/2 gap-3')}>
+              <span className={cn('relative', 'inline-block')}>
+                <div
+                  className={cn(
+                    'absolute',
+                    '-top-4',
+                    'left-1/2',
+                    'z-10',
+                    'flex',
+                    '-translate-x-1/2',
+                    'gap-3',
+                  )}
+                >
                   <Dot color="#AFDB00" />
                 </div>
                 <span className={cn('text-lime-400')}>인성</span>
               </span>
               <span className={cn('text-blue-700')}>과 </span>
-              <span className={cn('relative inline-block')}>
-                <div className={cn('absolute -top-4 left-1/2 z-10 flex', '-translate-x-1/2 gap-3')}>
+              <span className={cn('relative', 'inline-block')}>
+                <div
+                  className={cn(
+                    'absolute',
+                    '-top-4',
+                    'left-1/2',
+                    'z-10',
+                    'flex',
+                    '-translate-x-1/2',
+                    'gap-3',
+                  )}
+                >
                   <Dot color="#AFDB00" />
                 </div>
                 <span className={cn('text-lime-400')}>감성</span>
               </span>
               <span className={cn('text-black')}>으로</span>{' '}
-              <span className={cn('relative inline-block')}>
-                <div className={cn('absolute -top-4 left-1/2 z-10 flex', '-translate-x-1/2 gap-3')}>
+              <span className={cn('relative', 'inline-block')}>
+                <div
+                  className={cn(
+                    'absolute',
+                    '-top-4',
+                    'left-1/2',
+                    'z-10',
+                    'flex',
+                    '-translate-x-1/2',
+                    'gap-3',
+                  )}
+                >
                   <Dot color="#3DAEFF" />
                 </div>
                 <span className={cn('text-blue-200')}>감동</span>
@@ -187,7 +277,11 @@ export default function MainPage() {
 
           <div
             className={cn(
-              'grid w-full max-w-6xl grid-cols-1 gap-3',
+              'grid',
+              'w-full',
+              'max-w-6xl',
+              'grid-cols-1',
+              'gap-3',
               'mobile-lg:grid-cols-2',
               'tablet:grid-cols-4',
             )}
@@ -241,7 +335,7 @@ export default function MainPage() {
         {/* 섹션 3 */}
         <div className={cn('bg-gray-50')}>
           <section className={cn('mx-auto', 'max-w-[75rem]', 'px-[1rem]', 'py-[8rem]')}>
-            <div className={cn('mb-[3rem]', 'flex max-w-[37.5rem]', 'flex-col gap-[1rem]')}>
+            <div className={cn('mb-[3rem]', 'flex', 'max-w-[37.5rem]', 'flex-col', 'gap-[1rem]')}>
               <h2
                 className={cn(
                   'mb-[0.5rem]',
@@ -264,7 +358,7 @@ export default function MainPage() {
               className={cn(
                 'grid',
                 'grid-cols-1',
-                'gap-[2rem]',
+                'gap-[1rem]',
                 'mobile:grid-cols-1',
                 'mobile-lg:grid-cols-2',
                 'tablet-sm:grid-cols-2',

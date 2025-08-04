@@ -1,5 +1,5 @@
-export { default as Four } from './four';
-export { default as Zero } from './zero';
-export { default as Dot } from './dot';
-export { default as Arrow } from './arrow';
-export { default as Arrow2 } from './arrow2';
+export { default as Four } from './Four';
+export { default as Zero } from './Zero';
+export { default as Dot } from './Dot';
+export { default as BottomArrow } from './BottomArrow';
+export { default as BackIcon } from './BackIcon';
