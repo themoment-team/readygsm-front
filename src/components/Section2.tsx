@@ -3,7 +3,7 @@
 import { Dot } from '@/assets';
 import { cn } from '@/lib/utils';
 
-import FeatureBox from './FeatureBox';
+import TitleCard from './TitleCard';
 
 export default function Section2() {
   return (
@@ -88,7 +88,7 @@ export default function Section2() {
           'tablet:grid-cols-4',
         )}
       >
-        <FeatureBox
+        <TitleCard
           text={
             <>
               AI 시대를 선도할
@@ -98,7 +98,7 @@ export default function Section2() {
           }
           emoji="🎯"
         />
-        <FeatureBox
+        <TitleCard
           text={
             <>
               직업군에 최적화된
@@ -108,7 +108,7 @@ export default function Section2() {
           }
           emoji="💪"
         />
-        <FeatureBox
+        <TitleCard
           text={
             <>
               산업수요 변화에 맞춘
@@ -118,7 +118,7 @@ export default function Section2() {
           }
           emoji="💡"
         />
-        <FeatureBox
+        <TitleCard
           text={
             <>
               자율설계와 자기 주도성으로

@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils';
 
-import Feature from './Feature';
+import MajorCard from './MajorCard';
 
 const features = [
   {
@@ -66,7 +66,7 @@ export default function Section3() {
           )}
         >
           {features.map((feature, index) => (
-            <Feature
+            <MajorCard
               key={index}
               imgSrc={feature.imgSrc}
               title={feature.title}

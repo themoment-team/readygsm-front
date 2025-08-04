@@ -13,7 +13,7 @@ type FeatureProps = {
   };
 };
 
-const Feature = ({ imgSrc, title, tags, tagColor, description }: FeatureProps) => {
+const MajorCard = ({ imgSrc, title, tags, tagColor, description }: FeatureProps) => {
   return (
     <article className={cn('rounded-[1rem]', 'bg-gray-50')}>
       <img
@@ -57,4 +57,4 @@ const Feature = ({ imgSrc, title, tags, tagColor, description }: FeatureProps) =
   );
 };
 
-export default Feature;
+export default MajorCard;

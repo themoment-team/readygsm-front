@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils';
 
-const FeatureBox = (props: { text: React.ReactNode; emoji: string }) => {
+const TitleCard = (props: { text: React.ReactNode; emoji: string }) => {
   const { text, emoji } = props;
 
   return (
@@ -48,4 +48,4 @@ const FeatureBox = (props: { text: React.ReactNode; emoji: string }) => {
   );
 };
 
-export default FeatureBox;
+export default TitleCard;
