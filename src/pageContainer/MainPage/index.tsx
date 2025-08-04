@@ -1,7 +1,5 @@
 'use client';
 
-import React from 'react';
-
 import { Arrow, Dot } from '@/assets';
 import { cn } from '@/lib/utils';
 
@@ -123,7 +121,6 @@ export default function MainPage() {
                 onClick={() => {
                   document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                aria-label="특징으로 스크롤 이동"
                 className={cn('flex flex-col items-center gap-[0.25rem]')}
               >
                 <span className={cn('text-lg font-semibold text-white')}>GSM 더 알아보기</span>
@@ -265,7 +262,13 @@ export default function MainPage() {
 
             <div
               className={cn(
-                'grid grid-cols-1 gap-[2rem] mobile:grid-cols-1 mobile-lg:grid-cols-2 tablet-sm:grid-cols-2 tablet:grid-cols-3',
+                'grid',
+                'grid-cols-1',
+                'gap-[2rem]',
+                'mobile:grid-cols-1',
+                'mobile-lg:grid-cols-2',
+                'tablet-sm:grid-cols-2',
+                'tablet:grid-cols-3',
               )}
             >
               <Feature
