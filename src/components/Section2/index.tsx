@@ -3,9 +3,9 @@
 import { Dot } from '@/assets';
 import { cn } from '@/lib/utils';
 
-import TitleCard from './TitleCard';
+import TitleCard from '../TitleCard';
 
-export default function Section2() {
+const Section2 = () => {
   return (
     <section
       id="features"
@@ -131,4 +131,6 @@ export default function Section2() {
       </div>
     </section>
   );
-}
+};
+
+export default Section2;

@@ -23,15 +23,16 @@ const TitleCard = (props: { text: React.ReactNode; emoji: string }) => {
     >
       <p
         className={cn(
+          'relative',
+          '-left-[1.25rem]',
           'max-w-[22.5rem]',
           'text-[1.2rem]',
           'font-semibold',
           'leading-[1.4]',
           'text-blue-700',
         )}
-        style={{ position: 'relative', left: '-1.25rem' }}
       >
-        {text}{' '}
+        {text}
       </p>
       <span
         className={cn(

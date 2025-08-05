@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils';
 
-import MajorCard from './MajorCard';
+import MajorCard from '../MajorCard';
 
 const features = [
   {
@@ -31,7 +31,7 @@ const features = [
   },
 ];
 
-export default function Section3() {
+const Section3 = () => {
   return (
     <div className={cn('bg-gray-50')}>
       <section className={cn('mx-auto', 'max-w-[75rem]', 'px-[1rem]', 'py-[8rem]')}>
@@ -79,4 +79,6 @@ export default function Section3() {
       </section>
     </div>
   );
-}
+};
+
+export default Section3;

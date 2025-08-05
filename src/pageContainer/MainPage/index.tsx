@@ -1,6 +1,6 @@
 import { Section1, Section2, Section3 } from '@/components';
 
-export default function MainPage() {
+const MainPage = () => {
   return (
     <div className="w-full">
       <Section1 />
@@ -8,4 +8,6 @@ export default function MainPage() {
       <Section3 />
     </div>
   );
-}
+};
+
+export default MainPage;

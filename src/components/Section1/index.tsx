@@ -3,7 +3,7 @@
 import { BottomArrow } from '@/assets';
 import { cn } from '@/lib/utils';
 
-export default function Section1() {
+const Section1 = () => {
   return (
     <section
       className={cn('relative', 'h-screen', 'bg-cover', 'bg-center')}
@@ -99,4 +99,5 @@ export default function Section1() {
       `}</style>
     </section>
   );
-}
+};
+export default Section1;
