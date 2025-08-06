@@ -5,6 +5,49 @@ import { cn } from '@/lib/utils';
 
 import TitleCard from '../TitleCard';
 
+const Titlecard = [
+  {
+    text: (
+      <>
+        AI 시대를 선도할
+        <br />
+        GSM 교육과정 운영
+      </>
+    ),
+    emoji: '🎯',
+  },
+  {
+    text: (
+      <>
+        직업군에 최적화된
+        <br />
+        취업역량 강화
+      </>
+    ),
+    emoji: '💪',
+  },
+  {
+    text: (
+      <>
+        산업수요 변화에 맞춘
+        <br />
+        현장실무능력 향상
+      </>
+    ),
+    emoji: '💡',
+  },
+  {
+    text: (
+      <>
+        자율설계와 자기 주도성으로
+        <br />
+        학습 능력 신장
+      </>
+    ),
+    emoji: '🚀',
+  },
+];
+
 const Section2 = () => {
   return (
     <section
@@ -88,46 +131,9 @@ const Section2 = () => {
           'tablet:grid-cols-4',
         )}
       >
-        <TitleCard
-          text={
-            <>
-              AI 시대를 선도할
-              <br />
-              GSM 교육과정 운영
-            </>
-          }
-          emoji="🎯"
-        />
-        <TitleCard
-          text={
-            <>
-              직업군에 최적화된
-              <br />
-              취업역량 강화
-            </>
-          }
-          emoji="💪"
-        />
-        <TitleCard
-          text={
-            <>
-              산업수요 변화에 맞춘
-              <br />
-              현장실무능력 향상
-            </>
-          }
-          emoji="💡"
-        />
-        <TitleCard
-          text={
-            <>
-              자율설계와 자기 주도성으로
-              <br />
-              학습 능력 신장
-            </>
-          }
-          emoji="🚀"
-        />
+        {Titlecard.map((card, index) => (
+          <TitleCard key={index} text={card.text} emoji={card.emoji} />
+        ))}
       </div>
     </section>
   );
