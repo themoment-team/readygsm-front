@@ -33,14 +33,14 @@ const features = [
 
 const Section3 = () => {
   return (
-    <div className={cn('bg-gray-50')}>
+    <div className={cn('bg-bgDefault')}>
       <section className={cn('mx-auto', 'max-w-[75rem]', 'px-[1rem]', 'py-[8rem]')}>
-        <div className={cn('mb-[3rem]', 'flex', 'max-w-[37.5rem]', 'flex-col', 'gap-[1rem]')}>
+        <div className={cn('pb-[3rem]', 'flex', 'max-w-[37.5rem]', 'flex-col', 'gap-[1rem]')}>
           <h2
             className={cn(
               'mb-[0.5rem]',
               'text-[2rem]',
-              'font-extrabold',
+              'font-[600]',
               'leading-tight',
               'text-black',
             )}

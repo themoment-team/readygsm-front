@@ -37,7 +37,7 @@ const MajorCard = ({ imgSrc, title, tags, tagColor, description }: FeatureProps)
           {tags.map((tag) => (
             <span
               key={tag}
-              className={cn('rounded-full', 'px-1.5', 'py-0.5', 'text-[0.875rem]', 'font-medium')}
+              className={cn('rounded-full', 'px-1.5', 'py-0.5', 'text-[0.875rem]', 'font-[400]')}
               style={
                 tagColor
                   ? {

@@ -58,9 +58,9 @@ const Section2 = () => {
         'flex-col',
         'items-center',
         'justify-center',
-        'bg-gray-50',
+        'bg-bgDefault',
         'px-4',
-        'py-20',
+        'py-[11.25rem]',
       )}
     >
       <div className={cn('text-center', 'text-[2rem]', 'font-[600]', 'leading-snug')}>
@@ -117,7 +117,7 @@ const Section2 = () => {
           </span>
           <span className={cn('text-black')}>을 만드는</span>
         </div>
-        <div className={cn('mt-1')}>광주소프트웨어마이스터고등학교</div>
+        <div className={cn('mt-1', 'text-black')}>광주소프트웨어마이스터고등학교</div>
       </div>
 
       <div
