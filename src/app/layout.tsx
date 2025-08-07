@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 
+import { Footer } from '@/components';
 import { pretendard } from '@/styles/fonts';
 import '@/styles/globals.css';
 
@@ -17,7 +18,10 @@ const RootLayout = ({
 }>) => (
   <html lang="ko">
     <body className={pretendard.className}>
-      <Provider>{children}</Provider>
+      <Provider>
+        {children}
+        <Footer />
+      </Provider>
     </body>
   </html>
 );
