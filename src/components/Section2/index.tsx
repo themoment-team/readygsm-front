@@ -54,7 +54,6 @@ const Section2 = () => {
       id="features"
       className={cn(
         'flex',
-        'min-h-screen',
         'flex-col',
         'items-center',
         'justify-center',
