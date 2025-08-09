@@ -119,19 +119,20 @@ const Section2 = () => {
         <div className={cn('mt-1', 'text-black')}>광주소프트웨어마이스터고등학교</div>
       </div>
 
-      <div
-        className={cn(
-          'grid',
-          'w-full',
-          'max-w-6xl',
-          'grid-cols-1',
-          'gap-3',
-          'mobile-lg:grid-cols-2',
-          'tablet:grid-cols-4',
-        )}
-      >
+      <div className={cn('flex', 'flex-wrap', 'w-full', 'max-w-6xl', 'gap-3', 'justify-center')}>
         {Titlecard.map((card, index) => (
-          <TitleCard key={index} text={card.text} emoji={card.emoji} />
+          <div
+            key={index}
+            className={cn(
+              'w-full',
+              'mobile-lg:w-[calc(50%-0.75rem)]',
+              'tablet-sm:w-[calc(50%-0.75rem)]',
+              'tablet:w-[calc(50%-0.75rem)]',
+              'tablet-lg:w-[calc(25%-0.75rem)]',
+            )}
+          >
+            <TitleCard text={card.text} emoji={card.emoji} />
+          </div>
         ))}
       </div>
     </section>

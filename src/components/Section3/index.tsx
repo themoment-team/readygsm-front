@@ -34,7 +34,7 @@ const features = [
 const Section3 = () => {
   return (
     <div className={cn('bg-bgDefault')}>
-      <section className={cn('mx-auto', 'max-w-[75rem]', 'px-[1rem]', 'py-[8rem]')}>
+      <section className={cn('mx-auto', 'max-w-[75rem]', 'px-[2rem]', 'py-[11.25rem]')}>
         <div className={cn('pb-[3rem]', 'flex', 'max-w-[37.5rem]', 'flex-col', 'gap-[1rem]')}>
           <h2
             className={cn(
@@ -54,26 +54,27 @@ const Section3 = () => {
           </p>
         </div>
 
-        <div
-          className={cn(
-            'grid',
-            'grid-cols-1',
-            'gap-[1rem]',
-            'mobile:grid-cols-1',
-            'mobile-lg:grid-cols-2',
-            'tablet-sm:grid-cols-2',
-            'tablet:grid-cols-3',
-          )}
-        >
+        <div className={cn('flex', 'flex-wrap', 'gap-[1rem]')}>
           {features.map((feature, index) => (
-            <MajorCard
+            <div
               key={index}
-              imgSrc={feature.imgSrc}
-              title={feature.title}
-              tags={feature.tags}
-              tagColor={feature.tagColor}
-              description={feature.description}
-            />
+              className={cn(
+                'w-full',
+                'mobile-lg:w-[calc(50%-0.75rem)]',
+                'tablet-sm:w-[calc(50%-0.75rem)]',
+                'desktop-sm:w-[calc(33.333%-0.67rem)]',
+                'box-border',
+                index === 2 ? 'mobile-lg:mx-auto tablet-sm:mx-auto' : '',
+              )}
+            >
+              <MajorCard
+                imgSrc={feature.imgSrc}
+                title={feature.title}
+                tags={feature.tags}
+                tagColor={feature.tagColor}
+                description={feature.description}
+              />
+            </div>
           ))}
         </div>
       </section>
