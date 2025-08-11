@@ -97,7 +97,7 @@ const Section2 = () => {
             </div>
             <span className={cn('text-lime-400')}>감성</span>
           </span>
-          <span className={cn('text-black')}>으로</span>{' '}
+          <span className={cn('text-blue-700')}>으로</span>{' '}
           <span className={cn('relative', 'inline-block')}>
             <div
               className={cn(
@@ -114,9 +114,9 @@ const Section2 = () => {
             </div>
             <span className={cn('text-blue-200')}>감동</span>
           </span>
-          <span className={cn('text-black')}>을 만드는</span>
+          <span className={cn('text-blue-700')}>을 만드는</span>
         </div>
-        <div className={cn('mt-1', 'text-black')}>광주소프트웨어마이스터고등학교</div>
+        <div className={cn('mt-1', 'text-blue-700')}>광주소프트웨어마이스터고등학교</div>
       </div>
 
       <div className={cn('flex', 'flex-wrap', 'w-full', 'max-w-6xl', 'gap-3', 'justify-center')}>
