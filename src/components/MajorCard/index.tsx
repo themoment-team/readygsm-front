@@ -28,7 +28,7 @@ const MajorCard = ({ imgSrc, title, tags, tagColor, description }: FeatureProps)
             'whitespace-nowrap',
             'text-[1.5rem]',
             'font-semibold',
-            'text-black',
+            'text-gray-900',
           )}
         >
           {title}

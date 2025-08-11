@@ -42,7 +42,7 @@ const Section3 = () => {
               'text-[2rem]',
               'font-[600]',
               'leading-tight',
-              'text-black',
+              'text-gray-900',
             )}
           >
             창의 융합력을 갖춘
