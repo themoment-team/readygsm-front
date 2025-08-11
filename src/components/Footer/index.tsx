@@ -1,4 +1,4 @@
-import Logo from '@/asset/logo';
+import Logo from '@/assets/logo';
 import { cn } from '@/lib/utils';
 
 const Footer = () => {
