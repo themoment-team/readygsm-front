@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { Footer } from '@/components';
+import ClientOnlyFooter from '@/components/ClientOnlyFooter';
 import { pretendard } from '@/styles/fonts';
 import '@/styles/globals.css';
 
@@ -11,19 +11,17 @@ export const metadata: Metadata = {
   description: 'Ready, GSM은 광주소프트웨어마이스터고 학과체험 및 입학설명회 신청 서비스입니다.',
 };
 
-const RootLayout = ({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) => (
-  <html lang="ko">
-    <body className={pretendard.className}>
-      <Provider>
-        {children}
-        <Footer />
-      </Provider>
-    </body>
-  </html>
-);
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <html lang="ko">
+      <body className={pretendard.className}>
+        <Provider>
+          {children}
+          <ClientOnlyFooter />
+        </Provider>
+      </body>
+    </html>
+  );
+};
 
 export default RootLayout;
