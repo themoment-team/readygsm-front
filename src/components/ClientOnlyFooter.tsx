@@ -6,7 +6,7 @@ import { Footer } from '@/components';
 
 export default function ClientOnlyFooter() {
   const pathname = usePathname();
-  const isAdminPage = pathname === '/admin';
+  const isAdminPage = pathname.startsWith('/admin');
 
   return !isAdminPage ? <Footer /> : null;
 }
