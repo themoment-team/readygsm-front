@@ -54,12 +54,22 @@ const Section3 = () => {
           </p>
         </div>
 
-        <div className={cn('flex', 'flex-wrap', 'gap-[1rem]')}>
+        <div
+          className={cn(
+            'flex',
+            'gap-[1rem]',
+            'overflow-x-auto',
+            'flex-nowrap',
+            'mobile-lg:flex-wrap',
+            'mobile-lg:overflow-visible',
+          )}
+        >
           {features.map((feature, index) => (
             <div
               key={index}
               className={cn(
-                'w-full',
+                'flex-shrink-0', // 줄바꿈 안 되도록 고정
+                'w-[80%]', // 모바일에서 카드 너비 (조절 가능)
                 'mobile-lg:w-[calc(50%-0.75rem)]',
                 'tablet-sm:w-[calc(50%-0.75rem)]',
                 'desktop-sm:w-[calc(33.333%-0.67rem)]',

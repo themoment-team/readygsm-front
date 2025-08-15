@@ -35,12 +35,23 @@ const Section1 = () => {
             <div
               className={cn(
                 'absolute',
-                '-top-5',
                 'left-1/2',
                 'z-10',
                 'flex',
-                'translate-x-[calc(-100%-73px)]',
+                '-top-5',
                 'gap-8',
+                'translate-x-[calc(-100%-73px)]',
+
+                'mobile-lg:-top-4',
+                'mobile-lg:gap-4',
+                'mobile-lg:translate-x-[calc(-100%-50px)]',
+
+                'tablet:-top-5',
+                'tablet:gap-8',
+                'tablet:translate-x-[calc(-100%-73px)]',
+
+                'hidden',
+                'mobile-lg:flex',
               )}
             >
               <div className={cn('h-2', 'w-2', 'rounded-full', 'bg-lime-300')} />
