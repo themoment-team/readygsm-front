@@ -26,9 +26,10 @@ const MajorCard = ({ imgSrc, title, tags, tagColor, description }: FeatureProps)
           className={cn(
             'mb-4',
             'whitespace-nowrap',
-            'text-[1.5rem]',
             'font-semibold',
             'text-gray-900',
+            'text-lg',
+            'md:text-[1.5rem]',
           )}
         >
           {title}
@@ -37,7 +38,15 @@ const MajorCard = ({ imgSrc, title, tags, tagColor, description }: FeatureProps)
           {tags.map((tag) => (
             <span
               key={tag}
-              className={cn('rounded-full', 'px-1.5', 'py-0.5', 'text-[0.875rem]', 'font-[400]')}
+              className={cn(
+                'rounded-full',
+                'px-1.5',
+                'py-0.5',
+                'text-[0.875rem]',
+                'font-[400]',
+                'text-xs',
+                'md:text-sm',
+              )}
               style={
                 tagColor
                   ? {
@@ -51,7 +60,17 @@ const MajorCard = ({ imgSrc, title, tags, tagColor, description }: FeatureProps)
             </span>
           ))}
         </div>
-        <p className={cn('text-[1.125rem]', 'leading-relaxed', 'text-gray-500')}>{description}</p>
+        <p
+          className={cn(
+            'text-[1.125rem]',
+            'leading-relaxed',
+            'text-gray-500',
+            'text-sm',
+            'md:text-[1.125rem]',
+          )}
+        >
+          {description}
+        </p>
       </div>
     </article>
   );

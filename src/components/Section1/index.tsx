@@ -76,39 +76,42 @@ const Section1 = () => {
           'items-center',
         )}
       >
-        <div className={cn('animate-elegant-bounce', 'mt-2')}>
-          <button
-            onClick={() => {
-              document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
-            }}
-            className={cn('flex', 'flex-col', 'items-center', 'gap-[0.25rem]')}
-          >
-            <span className={cn('text-lg', 'font-semibold', 'text-white')}>GSM 더 알아보기</span>
+        <button
+          onClick={() => {
+            document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
+          }}
+          className="flex flex-col items-center gap-[0.25rem]"
+        >
+          <span className="text-lg font-semibold text-white">GSM 더 알아보기</span>
+
+          <div className="animate-elegant-bounce inline-block">
             <BottomArrow />
-          </button>
-        </div>
+          </div>
+        </button>
       </div>
 
       <style jsx>{`
         @keyframes elegantBounce {
           0% {
             transform: translateY(0);
-            opacity: 0.7;
           }
-          50% {
-            transform: translateY(12px);
-            opacity: 1;
+          40% {
+            transform: translateY(-4px);
+          }
+          70% {
+            transform: translateY(2px);
           }
           100% {
             transform: translateY(0);
-            opacity: 0.7;
           }
         }
+
         .animate-elegant-bounce {
-          animation: elegantBounce 2s ease-in-out infinite;
+          animation: elegantBounce 1s ease-in-out infinite;
         }
       `}</style>
     </section>
   );
 };
+
 export default Section1;

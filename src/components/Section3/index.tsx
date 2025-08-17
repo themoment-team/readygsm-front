@@ -35,21 +35,33 @@ const Section3 = () => {
   return (
     <div className={cn('bg-bgDefault')}>
       <section className={cn('mx-auto', 'max-w-[75rem]', 'px-[2rem]', 'py-[11.25rem]')}>
-        <div className={cn('pb-[3rem]', 'flex', 'max-w-[37.5rem]', 'flex-col', 'gap-[1rem]')}>
+        <div
+          className={cn(
+            'pb-[3rem]',
+            'flex',
+            'flex-col',
+            'gap-[1rem]',
+            'text-center',
+            'desktop-sm:text-left',
+            'px-0 desktop-sm:px-[1rem]',
+            'max-w-[37.5rem]',
+          )}
+        >
           <h2
             className={cn(
               'mb-[0.5rem]',
-              'text-[2rem]',
               'font-[600]',
               'leading-tight',
               'text-gray-900',
+              'text-[1.5rem]',
+              'md:text-[2rem]',
             )}
           >
             창의 융합력을 갖춘
             <br />
             글로벌 소프트웨어 학과 소개
           </h2>
-          <p className={cn('text-[1.25rem]', 'font-normal', 'text-gray-500')}>
+          <p className={cn('font-normal', 'text-gray-500', 'text-base', 'md:text-[1.25rem]')}>
             체계적인 교육과정을 제공하는 소프트웨어 학과
           </p>
         </div>
@@ -58,18 +70,20 @@ const Section3 = () => {
           className={cn(
             'flex',
             'gap-[1rem]',
-            'overflow-x-auto',
-            'flex-nowrap',
+            'flex-wrap',
+            'justify-center',
             'mobile-lg:flex-wrap',
             'mobile-lg:overflow-visible',
+            'desktop-sm:flex-nowrap',
+            'desktop-sm:overflow-x-auto',
           )}
         >
           {features.map((feature, index) => (
             <div
               key={index}
               className={cn(
-                'flex-shrink-0', // 줄바꿈 안 되도록 고정
-                'w-[80%]', // 모바일에서 카드 너비 (조절 가능)
+                'flex-shrink-0',
+                'w-[80%]',
                 'mobile-lg:w-[calc(50%-0.75rem)]',
                 'tablet-sm:w-[calc(50%-0.75rem)]',
                 'desktop-sm:w-[calc(33.333%-0.67rem)]',
