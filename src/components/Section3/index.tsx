@@ -45,6 +45,7 @@ const Section3 = () => {
             'desktop-sm:text-left',
             'px-0 desktop-sm:px-[1rem]',
             'max-w-[37.5rem]',
+            'mx-auto desktop-sm:mx-0',
           )}
         >
           <h2
@@ -70,10 +71,12 @@ const Section3 = () => {
           className={cn(
             'flex',
             'gap-[1rem]',
-            'flex-wrap',
-            'justify-center',
+            'flex-nowrap',
+            'overflow-x-auto',
+            'scrollbar-hide',
             'mobile-lg:flex-wrap',
             'mobile-lg:overflow-visible',
+            'justify-start',
             'desktop-sm:flex-nowrap',
             'desktop-sm:overflow-x-auto',
           )}
