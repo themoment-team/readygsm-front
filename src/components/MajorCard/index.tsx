@@ -15,7 +15,7 @@ type FeatureProps = {
 
 const MajorCard = ({ imgSrc, title, tags, tagColor, description }: FeatureProps) => {
   return (
-    <article className={cn('rounded-[1rem]', 'bg-gray-50')}>
+    <article className={cn('rounded-[1rem]', 'bg-bgDefault')}>
       <img
         src={imgSrc}
         alt={title}

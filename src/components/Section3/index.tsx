@@ -54,15 +54,24 @@ const Section3 = () => {
               'font-[600]',
               'leading-tight',
               'text-gray-900',
-              'text-[1.5rem]',
-              'md:text-[2rem]',
+              'text-[1.2rem]',
+              'tablet-sm:text-[1.5rem]',
+              'tablet:text-[2rem]',
             )}
           >
             창의 융합력을 갖춘
             <br />
             글로벌 소프트웨어 학과 소개
           </h2>
-          <p className={cn('font-normal', 'text-gray-500', 'text-base', 'md:text-[1.25rem]')}>
+          <p
+            className={cn(
+              'font-normal',
+              'text-gray-500',
+              'text-[0.875rem]',
+              'tablet-sm:text-base',
+              'tablet:text-[1.25rem]',
+            )}
+          >
             체계적인 교육과정을 제공하는 소프트웨어 학과
           </p>
         </div>
