@@ -66,15 +66,7 @@ const Section2 = () => {
         <div>
           <span className={cn('relative', 'inline-block')}>
             <div
-              className={cn(
-                'absolute',
-                '-top-4',
-                'left-1/2',
-                'z-10',
-                'flex',
-                '-translate-x-1/2',
-                'gap-3',
-              )}
+              className={cn('absolute', '-top-4', 'left-1/2', 'z-10', 'flex', '-translate-x-1/2')}
             >
               <Dot color="#AFDB00" />
             </div>
@@ -83,15 +75,7 @@ const Section2 = () => {
           <span className={cn('text-blue-700')}>과 </span>
           <span className={cn('relative', 'inline-block')}>
             <div
-              className={cn(
-                'absolute',
-                '-top-4',
-                'left-1/2',
-                'z-10',
-                'flex',
-                '-translate-x-1/2',
-                'gap-3',
-              )}
+              className={cn('absolute', '-top-4', 'left-1/2', 'z-10', 'flex', '-translate-x-1/2')}
             >
               <Dot color="#AFDB00" />
             </div>
@@ -100,15 +84,7 @@ const Section2 = () => {
           <span className={cn('text-blue-700')}>으로</span>{' '}
           <span className={cn('relative', 'inline-block')}>
             <div
-              className={cn(
-                'absolute',
-                '-top-4',
-                'left-1/2',
-                'z-10',
-                'flex',
-                '-translate-x-1/2',
-                'gap-3',
-              )}
+              className={cn('absolute', '-top-4', 'left-1/2', 'z-10', 'flex', '-translate-x-1/2')}
             >
               <Dot color="#3DAEFF" />
             </div>
@@ -119,14 +95,15 @@ const Section2 = () => {
         <div className={cn('mt-1', 'text-blue-700')}>광주소프트웨어마이스터고등학교</div>
       </div>
 
-      <div className={cn('flex', 'flex-wrap', 'w-full', 'max-w-6xl', 'gap-3', 'justify-center')}>
+      <div className={cn('flex', 'flex-wrap', 'w-full', 'max-w-6xl', 'gap-x-4', 'justify-center')}>
         {Titlecard.map((card, index) => (
           <div
             key={index}
             className={cn(
-              'w-full',
-              'tablet-lg:w-[calc(50%-0.75rem)]',
-              'desktop-sm:w-[calc(25%-0.75rem)]',
+              'w-[403px]',
+              'desktop-sm:w-[263px]',
+              'text-[1.875rem]',
+              'desktop-sm:text-[1.5rem]',
             )}
           >
             <TitleCard text={card.text} emoji={card.emoji} />

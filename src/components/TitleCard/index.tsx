@@ -26,10 +26,11 @@ const TitleCard = (props: { text: React.ReactNode; emoji: string }) => {
           'relative',
           '-left-[1.25rem]',
           'max-w-[22.5rem]',
-          'text-[1.2rem]',
-          'font-semibold',
+          'font-[600]',
           'leading-[1.4]',
           'text-blue-700',
+          'text-[1.25rem]',
+          'desktop-sm:text-[1rem]',
         )}
       >
         {text}
