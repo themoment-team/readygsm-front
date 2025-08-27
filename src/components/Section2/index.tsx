@@ -125,10 +125,8 @@ const Section2 = () => {
             key={index}
             className={cn(
               'w-full',
-              'mobile-lg:w-[calc(50%-0.75rem)]',
-              'tablet-sm:w-[calc(50%-0.75rem)]',
-              'tablet:w-[calc(50%-0.75rem)]',
-              'tablet-lg:w-[calc(25%-0.75rem)]',
+              'tablet-lg:w-[calc(50%-0.75rem)]',
+              'desktop-sm:w-[calc(25%-0.75rem)]',
             )}
           >
             <TitleCard text={card.text} emoji={card.emoji} />
