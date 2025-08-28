@@ -92,7 +92,9 @@ const Section2 = () => {
           </span>
           <span className={cn('text-blue-700')}>을 만드는</span>
         </div>
-        <div className={cn('mt-1', 'text-blue-700')}>광주소프트웨어마이스터고등학교</div>
+        <div className={cn('mt-1', 'mb-[6.25rem]', 'text-blue-700')}>
+          광주소프트웨어마이스터고등학교
+        </div>
       </div>
 
       <div className={cn('flex', 'flex-wrap', 'w-full', 'max-w-6xl', 'gap-x-4', 'justify-center')}>

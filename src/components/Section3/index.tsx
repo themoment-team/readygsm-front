@@ -103,13 +103,7 @@ const Section3 = () => {
                 index === 2 ? 'mobile-lg:mx-auto tablet-sm:mx-auto' : '',
               )}
             >
-              <MajorCard
-                imgSrc={feature.imgSrc}
-                title={feature.title}
-                tags={feature.tags}
-                tagColor={feature.tagColor}
-                description={feature.description}
-              />
+              <MajorCard {...feature} />
             </div>
           ))}
         </div>

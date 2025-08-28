@@ -9,13 +9,13 @@ const TitleCard = (props: { text: React.ReactNode; emoji: string }) => {
     <div
       className={cn(
         'relative',
-        'mt-16',
         'h-[15.625rem]',
         'rounded-xl',
         'px-8',
         'pb-6',
         'pt-8',
         'text-left',
+        'my-[1rem]',
       )}
       style={{
         boxShadow: '0px 4px 20px 0px rgba(112, 144, 176, 0.12)',
