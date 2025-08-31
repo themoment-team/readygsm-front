@@ -7,18 +7,9 @@ const TitleCard = (props: { text: React.ReactNode; emoji: string }) => {
 
   return (
     <div
-      className={cn(
-        'relative',
-        'h-[15.625rem]',
-        'rounded-xl',
-        'px-8',
-        'pb-6',
-        'pt-8',
-        'text-left',
-        'my-[1rem]',
-      )}
+      className={cn('relative', 'h-[15.625rem]', 'rounded-xl', 'px-8', 'pb-6', 'pt-8', 'text-left')}
       style={{
-        boxShadow: '0px 4px 20px 0px rgba(112, 144, 176, 0.12)',
+        boxShadow: '0 4px 20px 0 rgba(112, 144, 176, 0.12)',
       }}
     >
       <p

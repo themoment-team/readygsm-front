@@ -97,7 +97,17 @@ const Section2 = () => {
         </div>
       </div>
 
-      <div className={cn('flex', 'flex-wrap', 'w-full', 'max-w-6xl', 'gap-x-4', 'justify-center')}>
+      <div
+        className={cn(
+          'flex',
+          'flex-wrap',
+          'w-full',
+          'max-w-6xl',
+          'gap-x-4',
+          'gap-y-4',
+          'justify-center',
+        )}
+      >
         {Titlecard.map((card, index) => (
           <div
             key={index}
