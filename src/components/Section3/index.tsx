@@ -1,113 +1,183 @@
 'use client';
 
-import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
-import MajorCard from '../MajorCard';
+import { cn } from '@/lib/utils';
 
 const features = [
   {
-    imgSrc: '/software.png',
-    title: '소프트웨어 개발과',
-    tags: ['운영체제', 'C', 'C++', 'JAVA', '네트워크', '모바일'],
-    tagColor: { bg: '#EFF6FF', text: '#0EA5E9' },
-    description:
-      'SW개발의 계획에서부터 분석, 설계, 코딩, 테스트링, 유지보수까지 전반적인 학습 / 맞춤형 실무교육을 통해 정보 시스템 개발과 웹/모바일, 콘텐츠 제작이 가능하도록 전문 인재 양성',
+    Img: '/software.png',
+    department: '소프트웨어개발과',
+    textColor: 'text-blue-300',
+    tagColor: 'bg-blue-50',
+    learn: ['운영체제', 'C', 'C++', 'JAVA', '네트워크', '모바일'],
+    description: `SW개발의 계획에서부터 분석, 설계, 코딩, 테스팅,
+    유지보수까지 전반적인 학습 / 맞춤형 실무교육을 통해 정보
+    시스템 개발과 웹/모바일, 콘텐츠 제작이 가능하도록 전문
+    인재 양성`,
   },
   {
-    imgSrc: '/iot.png',
-    title: '스마트 IOT(Internet Of Things)과',
-    tags: ['리눅스', '라즈베리파이', '아두이노', '하드웨어'],
-    tagColor: { bg: '#F7FEE7', text: '#4D7C0F' },
-    description:
-      '사물에 내장된 컴퓨터가 수행할 수 있는 소프트웨어개발 사물에 센서를 부착해 실시간으로 데이터를 인터넷으로 주고받는 기술인 IT융합 소프트웨어를 설계, 개발이 가능한 전문 인재를 양성',
+    Img: '/iot.png',
+    department: '스마트 IOT(Internet Of Things)과',
+    textColor: 'text-lime-700',
+    tagColor: 'bg-lime-50',
+    learn: ['리눅스', '라즈베리파이', '아두이노', '하드웨어'],
+    description: `사물에 내장된 컴퓨터가 수행할 수 있는 소프트웨어개발 
+    사물에 센서를 부착해 실시간으로 데이터를 인터넷으로 
+    주고받는 기술인 IT융합 소프트웨어를 설계, 개발이 가능한
+    전문 인재를 양성`,
   },
   {
-    imgSrc: '/ai.png',
-    title: '인공지능(AI)과',
-    tags: ['빅데이터', '사물인터넷', '머신러닝', '딥러닝'],
-    tagColor: { bg: '#EFF6FF', text: '#0C4A6E' },
-    description:
-      '인공지능, 빅데이터, 사물인터넷을 바탕으로 한 인공지능 기반 기술을 교육하여 인공지능 서비스의 요구사항을 실현하기 위한 인공지능 플랫폼 구현, 인공지능 서비스 기획 전문 인재를 양성',
+    Img: '/ai.png',
+    department: '인공지능(AI)과',
+    textColor: 'text-blue-700',
+    tagColor: 'bg-blue-50',
+    learn: ['빅데이터', '사물인터넷', '머신러닝', '딥러닝'],
+    description: `인공지능, 빅데이터, 사물인터넷을 바탕으로 한 인공지능 
+    기반 기술을 교육하여 인공지능 서비스의 요구사항을 
+    실현하기 위한 인공지능 플랫폼 구현, 인공지능 서비스 
+    기획 전문 인재를 양성`,
   },
-];
+] as const;
 
 const Section3 = () => {
   return (
-    <div className={cn('bg-bgDefault')}>
-      <section className={cn('mx-auto', 'max-w-[75rem]', 'px-[2rem]', 'py-[11.25rem]')}>
+    <div className={cn('flex', 'flex-col', 'bg-bgDefault', 'py-[11.25rem]', 'w-full')}>
+      <div className={cn('flex', 'justify-center', 'gap-[4.25rem]', 'flex-col')}>
         <div
           className={cn(
-            'pb-[3rem]',
             'flex',
             'flex-col',
+            'items-center',
             'gap-[1rem]',
-            'text-center',
-            'desktop-sm:text-left',
-            'px-0 desktop-sm:px-[1rem]',
-            'max-w-[37.5rem]',
-            'mx-auto desktop-sm:mx-0',
+            'pl-[8rem]',
+            'px-4',
+            'mobile:px-[3.75rem]',
+            'tablet:px-[8rem]',
+            'desktop:px-[16rem]',
+            'desktop-lg:px-[20rem]',
+            'desktop-xl:px-[32.5rem]',
+            'desktop:items-start',
           )}
         >
-          <h2
-            className={cn(
-              'mb-[0.5rem]',
-              'font-[600]',
-              'leading-tight',
-              'text-gray-900',
-              'text-[1.2rem]',
-              'tablet-sm:text-[1.5rem]',
-              'tablet:text-[2rem]',
-            )}
-          >
-            창의 융합력을 갖춘
-            <br />
-            글로벌 소프트웨어 학과 소개
-          </h2>
-          <p
-            className={cn(
-              'font-normal',
-              'text-gray-500',
-              'text-[0.875rem]',
-              'tablet-sm:text-base',
-              'tablet:text-[1.25rem]',
-            )}
+          <div className={cn('flex', 'items-end')}>
+            <span
+              className={cn(
+                'text-gray-900',
+                'font-semibold',
+                'desktop:text-left',
+                'text-center',
+                'text-[1.25rem]/[1.25rem]',
+                'mobile:text-[1.5rem]/[2rem]',
+                'mobile-lg:text-[2rem]/[2.5rem]',
+              )}
+            >
+              창의 융합력을 갖춘 <br />
+              글로벌 소프트웨어 학과 소개
+            </span>
+          </div>
+          <span
+            className={cn('text-gray-700', 'mobile-lg:text-[1.25rem]/[1.75rem]', 'font-normal')}
           >
             체계적인 교육과정을 제공하는 소프트웨어 학과
-          </p>
+          </span>
         </div>
 
         <div
           className={cn(
             'flex',
-            'gap-[1rem]',
-            'flex-nowrap',
-            'overflow-x-auto',
-            'scrollbar-hide',
-            'mobile-lg:flex-wrap',
-            'mobile-lg:overflow-visible',
-            'justify-start',
-            'desktop-sm:flex-nowrap',
-            'desktop-sm:overflow-x-auto',
+            'flex-wrap',
+            'w-full',
+            'justify-center',
+            'items-start',
+            'gap-[0.8125rem]',
+            'px-4',
+            'mobile:px-[3.75rem]',
+            'mobile-lg:px-[5.75rem]',
+            'tablet:px-[8rem]',
+            'max-mobile-lg:overflow-x-scroll',
+            'max-mobile-lg:flex-nowrap',
+            'max-mobile-lg:justify-start',
+            'max-mobile-lg:pb-4',
           )}
         >
-          {features.map((feature, index) => (
+          {features.map((element, index) => (
             <div
               key={index}
               className={cn(
-                'flex-shrink-0',
-                'w-[80%]',
-                'mobile-lg:w-[calc(50%-0.75rem)]',
-                'tablet-sm:w-[calc(50%-0.75rem)]',
-                'desktop-sm:w-[calc(33.333%-0.67rem)]',
-                'box-border',
-                index === 2 ? 'mobile-lg:mx-auto tablet-sm:mx-auto' : '',
+                'flex',
+                'w-[26rem]',
+                'flex-col',
+                'items-start',
+                'gap-6',
+                'max-mobile-lg:flex-shrink-0',
               )}
             >
-              <MajorCard {...feature} />
+              <Image
+                src={element.Img}
+                alt={`${element.department} Image`}
+                width={418}
+                height={232}
+              />
+              <div className={cn('w-full', 'flex', 'flex-col', 'flex-start', 'gap-3')}>
+                <div className={cn('w-full', 'flex', 'flex-col', 'items-start', 'gap-4')}>
+                  <p
+                    className={cn(
+                      'text-gray-900',
+                      'text-[0.75rem]/[1.25rem]',
+                      'font-semibold',
+                      'mobile-lg:text-[1rem]/[1.5rem]',
+                      'tablet-sm:text-[1.5rem]/[2rem]',
+                    )}
+                  >
+                    {element.department}
+                  </p>
+                  <div className={cn('flex', 'w-full', 'items-center', 'gap-2')}>
+                    {element.learn.map((item, idx) => (
+                      <div
+                        key={idx}
+                        className={cn([
+                          'flex',
+                          'px-1',
+                          'py-1',
+                          'justify-center',
+                          'items-center',
+                          'rounded-[5rem]',
+                          'mobile-lg:px-2',
+                          element.tagColor,
+                        ])}
+                      >
+                        <p
+                          className={cn([
+                            element.textColor,
+                            'text-[0.5rem]/[0.75rem]',
+                            'font-normal',
+                            'mobile-lg:text-[0.75rem]/[1rem]',
+                            'tablet-sm:text-[0.875rem]/[1.25rem]',
+                          ])}
+                        >
+                          #{item}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <span
+                  className={cn(
+                    'text-gray-600',
+                    'text-[0.75rem]/[1.25rem]',
+                    'font-normal',
+                    'mobile-lg:text-[1rem]/[1.5rem]',
+                    'tablet-sm:text-[1.125rem]/[1.75rem]',
+                  )}
+                >
+                  {element.description}
+                </span>
+              </div>
             </div>
           ))}
         </div>
-      </section>
+      </div>
     </div>
   );
 };
