@@ -1,25 +1,26 @@
 import type { Metadata } from 'next';
 
-import { pretendard } from '@/styles/fonts';
-import '@/styles/globals.css';
+import { TanStackProvider } from '@/shared/lib';
 
-import Provider from './provider';
+import '@/shared/styles/globals.css';
 
 export const metadata: Metadata = {
-  title: 'Ready, GSM',
-  description: 'Ready, GSM은 광주소프트웨어마이스터고 학과체험 및 입학설명회 신청 서비스입니다.',
+  title: 'project-title',
+  description: 'project-description',
 };
 
 const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) => (
-  <html lang="ko">
-    <body className={pretendard.className}>
-      <Provider>{children}</Provider>
-    </body>
-  </html>
-);
+}>) => {
+  return (
+    <html lang="ko">
+      <body>
+        <TanStackProvider>{children}</TanStackProvider>
+      </body>
+    </html>
+  );
+};
 
 export default RootLayout;

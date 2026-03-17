@@ -1,7 +1,7 @@
-import { MainPage } from '@/pageContainer';
+import { HomePage } from '@/views/home';
 
-const Main = () => {
-  return <MainPage />;
+const Home = () => {
+  return <HomePage />;
 };
 
-export default Main;
+export default Home;
