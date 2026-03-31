@@ -1,5 +1,7 @@
+import { HomeProgramSection } from '@/widgets/homeProgramSection';
+
 const HomePage = () => {
-  return <div></div>;
+  return <HomeProgramSection />;
 };
 
 export default HomePage;
