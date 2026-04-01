@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 import { TanStackProvider } from '@/shared/lib';
+import { pretendard } from '@/shared/styles/fonts';
 
 import '@/shared/styles/globals.css';
-
 export const metadata: Metadata = {
   title: 'project-title',
   description: 'project-description',
@@ -16,7 +16,7 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="ko">
-      <body>
+      <body className={pretendard.className}>
         <TanStackProvider>{children}</TanStackProvider>
       </body>
     </html>
