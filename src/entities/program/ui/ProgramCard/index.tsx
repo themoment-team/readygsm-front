@@ -31,8 +31,8 @@ const ProgramCard = ({ title, content, date, personnel }: ProgramComponentProps)
           'mt-2 list-disc space-y-0.5 pl-5.25 font-[Pretendard,sans-serif] text-[14px] leading-[1.4] font-normal text-[#656E82]',
         )}
       >
-        {content.map((item) => (
-          <li key={item}>{item}</li>
+        {content.map((item, index) => (
+          <li key={index}>{item}</li>
         ))}
       </ul>
 

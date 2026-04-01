@@ -8,9 +8,9 @@ const HomeProgramSection = () => {
         'flex min-h-screen flex-col items-center justify-center gap-4 bg-white px-4 py-8 md:py-12',
       )}
     >
-      {projectMockList.map((project) => (
+      {projectMockList.map((project, index) => (
         <ProgramCard
-          key={project.title}
+          key={index}
           title={project.title}
           content={project.content}
           date={project.date}
