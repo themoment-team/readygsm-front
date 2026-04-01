@@ -1,13 +1,8 @@
 import { cn } from '@/shared/lib';
 
-type ProgramCardProps = {
-  title: string;
-  capacityText: string;
-  items: string[];
-  dateText: string;
-};
+import type { programComponentProps } from '../../model/types';
 
-const ProgramCard = ({ title, capacityText, items, dateText }: ProgramCardProps) => {
+const ProgramCard = ({ title, content, date, personnel }: programComponentProps) => {
   return (
     <section
       className={cn(
@@ -27,7 +22,7 @@ const ProgramCard = ({ title, capacityText, items, dateText }: ProgramCardProps)
             'font-[Pretendard,sans-serif] text-[24px] leading-[1.2] font-semibold text-[#292B2F]',
           )}
         >
-          {capacityText}
+          {personnel}명
         </p>
       </header>
 
@@ -36,7 +31,7 @@ const ProgramCard = ({ title, capacityText, items, dateText }: ProgramCardProps)
           'mt-2 list-disc space-y-0.5 pl-5.25 font-[Pretendard,sans-serif] text-[14px] leading-[1.4] font-normal text-[#656E82]',
         )}
       >
-        {items.map((item) => (
+        {content.map((item) => (
           <li key={item}>{item}</li>
         ))}
       </ul>
@@ -46,7 +41,7 @@ const ProgramCard = ({ title, capacityText, items, dateText }: ProgramCardProps)
           'mt-4 font-[Pretendard,sans-serif] text-[14px] leading-[1.4] font-normal text-[#656E82]',
         )}
       >
-        {dateText}
+        {date}
       </p>
     </section>
   );
