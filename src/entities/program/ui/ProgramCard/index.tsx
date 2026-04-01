@@ -1,3 +1,5 @@
+import { cn } from '@/shared/lib';
+
 type ProgramCardProps = {
   title: string;
   capacityText: string;
@@ -7,23 +9,41 @@ type ProgramCardProps = {
 
 const ProgramCard = ({ title, capacityText, items, dateText }: ProgramCardProps) => {
   return (
-    <section className="w-full max-w-155.5 rounded-lg border border-[#CBD5E1] bg-white px-6 py-5">
-      <header className="flex items-center justify-between">
-        <h2 className="font-[Pretendard,sans-serif] text-[24px] leading-[1.2] font-semibold text-[#292B2F]">
+    <section
+      className={cn('w-full max-w-155.5 rounded-lg border border-[#CBD5E1] bg-white px-6 py-5')}
+    >
+      <header className={cn('flex items-center justify-between')}>
+        <h2
+          className={cn(
+            'font-[Pretendard,sans-serif] text-[24px] leading-[1.2] font-semibold text-[#292B2F]',
+          )}
+        >
           {title}
         </h2>
-        <p className="font-[Pretendard,sans-serif] text-[24px] leading-[1.2] font-semibold text-[#292B2F]">
+        <p
+          className={cn(
+            'font-[Pretendard,sans-serif] text-[24px] leading-[1.2] font-semibold text-[#292B2F]',
+          )}
+        >
           {capacityText}
         </p>
       </header>
 
-      <ul className="mt-2 list-disc space-y-0.5 pl-5.25 font-[Pretendard,sans-serif] text-[14px] leading-[1.4] font-normal text-[#656E82]">
+      <ul
+        className={cn(
+          'mt-2 list-disc space-y-0.5 pl-5.25 font-[Pretendard,sans-serif] text-[14px] leading-[1.4] font-normal text-[#656E82]',
+        )}
+      >
         {items.map((item) => (
           <li key={item}>{item}</li>
         ))}
       </ul>
 
-      <p className="mt-4 font-[Pretendard,sans-serif] text-[14px] leading-[1.4] font-normal text-[#656E82]">
+      <p
+        className={cn(
+          'mt-4 font-[Pretendard,sans-serif] text-[14px] leading-[1.4] font-normal text-[#656E82]',
+        )}
+      >
         {dateText}
       </p>
     </section>

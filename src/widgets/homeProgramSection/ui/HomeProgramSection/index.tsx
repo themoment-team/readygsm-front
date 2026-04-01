@@ -1,4 +1,5 @@
 import { ProgramCard } from '@/entities/program';
+import { cn } from '@/shared/lib';
 
 const activityItems = [
   '간단한 웹 페이지(HTML/CSS) 제작 체험',
@@ -8,7 +9,9 @@ const activityItems = [
 
 const HomeProgramSection = () => {
   return (
-    <main className="flex min-h-screen items-start justify-center bg-white px-4 py-8 md:py-12">
+    <main
+      className={cn('flex min-h-screen items-start justify-center bg-white px-4 py-8 md:py-12')}
+    >
       <ProgramCard
         capacityText="0/18"
         dateText="2026-03-26 (목)"
