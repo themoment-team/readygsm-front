@@ -1,6 +1,6 @@
-import type { programComponentProps } from './types';
+import type { ProgramComponentProps } from './types';
 
-export const projectMockList: programComponentProps[] = [
+export const projectMockList: ProgramComponentProps[] = [
   {
     title: '프로젝트 A',
     content: [

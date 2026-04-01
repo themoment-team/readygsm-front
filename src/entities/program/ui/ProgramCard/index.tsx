@@ -1,8 +1,8 @@
 import { cn } from '@/shared/lib';
 
-import type { programComponentProps } from '../../model/types';
+import type { ProgramComponentProps } from '../../model/types';
 
-const ProgramCard = ({ title, content, date, personnel }: programComponentProps) => {
+const ProgramCard = ({ title, content, date, personnel }: ProgramComponentProps) => {
   return (
     <section
       className={cn(
