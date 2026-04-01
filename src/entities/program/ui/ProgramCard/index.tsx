@@ -10,7 +10,9 @@ type ProgramCardProps = {
 const ProgramCard = ({ title, capacityText, items, dateText }: ProgramCardProps) => {
   return (
     <section
-      className={cn('w-full max-w-155.5 rounded-lg border border-[#CBD5E1] bg-white px-6 py-5')}
+      className={cn(
+        'w-full max-w-155.5 cursor-pointer rounded-lg border border-[#CBD5E1] bg-white px-6 py-5 hover:border-[#7C91A9] hover:bg-[#EFF4FF]',
+      )}
     >
       <header className={cn('flex items-center justify-between')}>
         <h2
