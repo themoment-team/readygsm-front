@@ -1,4 +1,4 @@
-export interface ProgramComponentProps {
+export interface ProgramComponentTypes {
   title: string;
   content: string[];
   date: string;

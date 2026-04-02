@@ -1,17 +1,43 @@
 import { cn } from '@/shared/lib';
 
-import type { ProgramComponentProps } from '../../model/types';
+import type { ProgramComponentTypes } from '../../model/types';
 
-const ProgramCard = ({ title, content, date, personnel }: ProgramComponentProps) => {
+interface ProgramComponent extends ProgramComponentTypes {
+  isSelected?: boolean;
+  onClick?: () => void;
+}
+
+const ProgramCard = ({
+  title,
+  content,
+  date,
+  personnel,
+  isSelected = false,
+  onClick,
+}: ProgramComponent) => {
   return (
     <section
       className={cn(
-        'w-full max-w-155.5 cursor-pointer rounded-lg border border-[#CBD5E1] bg-white px-6 py-5 hover:border-[#7C91A9] hover:bg-[#EFF4FF]',
+        'w-full max-w-155.5 cursor-pointer rounded-lg border bg-white px-6 py-5 transition-colors duration-200 hover:bg-[#EFF4FF]',
+        isSelected ? 'border-[#2563EB]' : 'border-[#CBD5E1] hover:border-[#7C91A9]',
       )}
+      onClick={onClick}
     >
       <header className={cn('flex items-center justify-between')}>
-        <h2 className={cn('text-[24px] leading-[1.2] font-semibold text-[#292B2F]')}>{title}</h2>
-        <p className={cn('text-[24px] leading-[1.2] font-semibold text-[#292B2F]')}>
+        <h2
+          className={cn(
+            'text-[24px] leading-[1.2] font-semibold',
+            isSelected ? 'text-[#2563EB]' : 'text-[#292B2F]',
+          )}
+        >
+          {title}
+        </h2>
+        <p
+          className={cn(
+            'text-[24px] leading-[1.2] font-semibold',
+            isSelected ? 'text-[#2563EB]' : 'text-[#292B2F]',
+          )}
+        >
           {personnel}명
         </p>
       </header>
