@@ -10,25 +10,15 @@ const ProgramCard = ({ title, content, date, personnel }: ProgramComponentProps)
       )}
     >
       <header className={cn('flex items-center justify-between')}>
-        <h2
-          className={cn(
-            'font-[Pretendard,sans-serif] text-[24px] leading-[1.2] font-semibold text-[#292B2F]',
-          )}
-        >
-          {title}
-        </h2>
-        <p
-          className={cn(
-            'font-[Pretendard,sans-serif] text-[24px] leading-[1.2] font-semibold text-[#292B2F]',
-          )}
-        >
+        <h2 className={cn('text-[24px] leading-[1.2] font-semibold text-[#292B2F]')}>{title}</h2>
+        <p className={cn('text-[24px] leading-[1.2] font-semibold text-[#292B2F]')}>
           {personnel}명
         </p>
       </header>
 
       <ul
         className={cn(
-          'mt-2 list-disc space-y-0.5 pl-5.25 font-[Pretendard,sans-serif] text-[14px] leading-[1.4] font-normal text-[#656E82]',
+          'mt-2 list-disc space-y-0.5 pl-5.25 text-[14px] leading-[1.4] font-normal text-[#656E82]',
         )}
       >
         {content.map((item, index) => (
@@ -36,13 +26,7 @@ const ProgramCard = ({ title, content, date, personnel }: ProgramComponentProps)
         ))}
       </ul>
 
-      <p
-        className={cn(
-          'mt-4 font-[Pretendard,sans-serif] text-[14px] leading-[1.4] font-normal text-[#656E82]',
-        )}
-      >
-        {date}
-      </p>
+      <p className={cn('mt-4 text-[14px] leading-[1.4] font-normal text-[#656E82]')}>{date}</p>
     </section>
   );
 };
