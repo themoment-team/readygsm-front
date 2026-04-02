@@ -1,7 +1,13 @@
+'use client';
+
+import { useState } from 'react';
+
 import { ProgramCard, projectMockList } from '@/entities/program';
 import { cn } from '@/shared/lib';
 
 const HomeProgramSection = () => {
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
   return (
     <main
       className={cn(
@@ -11,10 +17,12 @@ const HomeProgramSection = () => {
       {projectMockList.map((project, index) => (
         <ProgramCard
           key={index}
-          title={project.title}
           content={project.content}
           date={project.date}
+          isSelected={selectedIndex === index}
+          onClick={() => setSelectedIndex(index)}
           personnel={project.personnel}
+          title={project.title}
         />
       ))}
     </main>
