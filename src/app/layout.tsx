@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 import { TanStackProvider } from '@/shared/lib';
-import { pretendard } from '@/shared/styles/fonts';
+import { pretendard } from '@/shared/styles';
 
 import '@/shared/styles/globals.css';
 export const metadata: Metadata = {
