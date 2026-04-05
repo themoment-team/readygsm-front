@@ -24,7 +24,7 @@ const Header = () => {
 
         <nav className="flex items-center gap-12">
           {NAV_LINKS.map((link) => {
-            const isActive = pathname === link.href;
+            const isActive = link.href === '/' ? pathname === '/' : pathname.startsWith(link.href);
 
             return (
               <Link
