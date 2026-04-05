@@ -38,7 +38,7 @@ const ProgramCard = ({
             isSelected ? 'text-[#2563EB]' : 'text-[#292B2F]',
           )}
         >
-          {personnel}명
+          {personnel}/18
         </p>
       </header>
 
