@@ -31,7 +31,7 @@ const Header = () => {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'relative flex flex-col items-center text-[1.5rem] leading-[120%] font-semibold transition-colors',
+                  'relative flex flex-col items-center text-2xl leading-[120%] font-semibold transition-colors',
                   isActive ? 'text-[#292B2F]' : 'text-[#9EA7B9] hover:text-[#747B88]',
                 )}
               >
