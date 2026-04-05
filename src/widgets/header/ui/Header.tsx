@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { Logo } from '@/shared/assets';
+import { cn } from '@/shared/lib';
 
 import { NAV_LINKS } from '../model/navigation';
 
@@ -29,36 +30,34 @@ const Header = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative flex flex-col items-center text-[1.5rem] leading-[120%] font-semibold transition-colors ${isActive ? 'text-[#292B2F]' : 'text-[#9EA7B9] hover:text-[#747B88]'} `}
+                className={cn(
+                  'relative flex flex-col items-center text-[1.5rem] leading-[120%] font-semibold transition-colors',
+                  isActive ? 'text-[#292B2F]' : 'text-[#9EA7B9] hover:text-[#747B88]',
+                )}
               >
                 {link.label}
                 <span
-                  style={{
-                    width: isActive ? '1.25rem' : '0',
-                    transition: 'width 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                  }}
-                  className="absolute -bottom-2 h-1 rounded-lg bg-[#2563EB]"
+                  className={cn(
+                    'absolute -bottom-2 h-1 rounded-lg bg-[#2563EB] transition-[width] duration-300 ease-in-out',
+                    isActive ? 'w-5' : 'w-0',
+                  )}
                 />
               </Link>
             );
           })}
         </nav>
 
-        {isLoggedIn ? (
-          <button
-            onClick={() => setIsLoggedIn(false)}
-            className="inline-flex items-center justify-center rounded-lg border border-[#2563EB] px-6 py-3 text-[1.125rem] leading-none font-medium text-[#2563EB]"
-          >
-            로그아웃
-          </button>
-        ) : (
-          <button
-            onClick={() => setIsLoggedIn(true)}
-            className="inline-flex items-center justify-center rounded-lg bg-[#2563EB] px-6 py-3 text-[1.125rem] leading-none font-medium text-white hover:bg-[#1D4ED8]"
-          >
-            로그인
-          </button>
-        )}
+        <button
+          onClick={() => setIsLoggedIn((prev) => !prev)}
+          className={cn(
+            'inline-flex items-center justify-center rounded-lg px-6 py-3 text-[1.125rem] leading-none font-medium',
+            isLoggedIn
+              ? 'border border-[#2563EB] text-[#2563EB]'
+              : 'bg-[#2563EB] text-white hover:bg-[#1D4ED8]',
+          )}
+        >
+          {isLoggedIn ? '로그아웃' : '로그인'}
+        </button>
       </div>
     </header>
   );
