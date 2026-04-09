@@ -34,7 +34,7 @@ function SelectTrigger({ className, children, ...props }: SelectPrimitive.Trigge
     <SelectPrimitive.Trigger
       data-slot="select-trigger"
       className={cn(
-        "flex h-9 w-30 items-center justify-between rounded-[8px] border border-[#CBD5E1] bg-white py-2 pr-4 pl-3 text-sm leading-5 font-normal whitespace-nowrap text-[#292B2F] transition-colors outline-none select-none hover:border-[#97A2AE] disabled:cursor-not-allowed disabled:opacity-50 aria-expanded:border-[#4A80F8] data-placeholder:text-[#94A3B8] [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "flex h-9 w-30 items-center justify-between rounded-[0.5rem] border border-[#CBD5E1] bg-white py-2 pr-4 pl-3 text-sm leading-5 font-normal whitespace-nowrap text-[#292B2F] transition-colors outline-none select-none hover:border-[#97A2AE] disabled:cursor-not-allowed disabled:opacity-50 aria-expanded:border-[#4A80F8] data-placeholder:text-[#94A3B8] [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className,
       )}
       {...props}
@@ -75,7 +75,7 @@ function SelectContent({
           data-slot="select-content"
           data-align-trigger={alignItemWithTrigger}
           className={cn(
-            'data-[side=bottom]:slide-in-from-top-2 data-[side=inline-end]:slide-in-from-left-2 data-[side=inline-start]:slide-in-from-right-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 relative isolate z-50 max-h-(--available-height) w-(--anchor-width) origin-(--transform-origin) overflow-x-hidden overflow-y-auto rounded-[8px] border border-[#CBD5E1] bg-white p-1 text-[#292B2F] shadow-none duration-100 data-[align-trigger=true]:animate-none',
+            'data-[side=bottom]:slide-in-from-top-2 data-[side=inline-end]:slide-in-from-left-2 data-[side=inline-start]:slide-in-from-right-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 relative isolate z-50 max-h-(--available-height) w-(--anchor-width) origin-(--transform-origin) overflow-x-hidden overflow-y-auto rounded-[0.5rem] border border-[#CBD5E1] bg-white p-1 text-[#292B2F] shadow-none duration-100 data-[align-trigger=true]:animate-none',
             className,
           )}
           {...props}
@@ -104,7 +104,7 @@ function SelectItem({ className, children, ...props }: SelectPrimitive.Item.Prop
     <SelectPrimitive.Item
       data-slot="select-item"
       className={cn(
-        'relative flex h-8 w-full cursor-pointer items-center rounded-[8px] bg-white pr-2 pl-3 text-sm leading-5 font-normal text-[#292B2F] outline-hidden select-none hover:bg-[#F8FAFC] data-disabled:cursor-not-allowed data-disabled:opacity-50',
+        'relative flex h-8 w-full cursor-pointer items-center rounded-[0.5rem] bg-white pr-2 pl-3 text-sm leading-5 font-normal text-[#292B2F] outline-hidden select-none hover:bg-[#F8FAFC] data-disabled:cursor-not-allowed data-disabled:opacity-50',
         className,
       )}
       {...props}

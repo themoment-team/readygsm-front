@@ -17,9 +17,9 @@ const buttonVariants = cva(
           'cursor-pointer border-[#F04636] bg-transparent text-[#F04636] hover:bg-[#F04636]/10 ',
       },
       size: {
-        sm: 'h-9 rounded-[8px] px-4',
-        md: 'h-11 rounded-[8px] px-6',
-        full: 'h-13 w-full rounded-[8px] px-4',
+        sm: 'h-9 rounded-[0.5rem] px-4',
+        md: 'h-11 rounded-[0.5rem] px-6',
+        full: 'h-13 w-full rounded-[0.5rem] px-4',
       },
     },
     defaultVariants: {
