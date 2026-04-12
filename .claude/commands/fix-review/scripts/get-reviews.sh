@@ -1,6 +1,6 @@
 #!/bin/bash
-# 현재 브랜치의 PR 리뷰 코멘트 조회
-# 출력: PR 번호, 리뷰 코멘트 (파일경로 + 라인 + 내용)
+# 현재 브랜치의 PR 리뷰 코멘트 조회 (ID 포함)
+# 출력: PR 번호, 인라인 코멘트, 전체 리뷰 코멘트
 
 PR_NUMBER=$(gh pr view --json number --jq '.number' 2>/dev/null)
 
@@ -13,14 +13,14 @@ fi
 echo "=== PR #$PR_NUMBER 리뷰 코멘트 ==="
 echo ""
 
-# 인라인 리뷰 코멘트 (코드 라인에 달린 것)
+# 인라인 리뷰 코멘트 (코드 라인에 달린 것) — ID 포함
 echo "--- 인라인 코멘트 ---"
 gh api "repos/{owner}/{repo}/pulls/$PR_NUMBER/comments" \
-  --jq '.[] | "[\(.path):\(.line // .original_line)]\n작성자: \(.user.login)\n내용: \(.body)\n---"'
+  --jq '.[] | "ID: \(.id)\n파일: \(.path):\(.line // .original_line)\n작성자: \(.user.login)\n내용: \(.body)\n---"'
 
 echo ""
 
-# 일반 리뷰 코멘트 (전체 PR에 달린 것)
+# 전체 리뷰 코멘트 (PR 전체에 달린 것) — ID 포함
 echo "--- 전체 리뷰 ---"
 gh api "repos/{owner}/{repo}/pulls/$PR_NUMBER/reviews" \
-  --jq '.[] | select(.body != "") | "작성자: \(.user.login) [\(.state)]\n내용: \(.body)\n---"'
+  --jq '.[] | select(.body != "") | "ID: \(.id)\n작성자: \(.user.login) [\(.state)]\n내용: \(.body)\n---"'
