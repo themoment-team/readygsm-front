@@ -29,8 +29,9 @@ type(scope): 설명
 5. 승인되면 아래 명령어 실행:
 
 ```bash
-git add .
+git add <변경된 파일들>  # git add . 금지 — 파일을 명시적으로 지정
 git commit -m "type(scope): 설명"
+git push
 ```
 
 ## 주의사항

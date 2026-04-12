@@ -3,7 +3,7 @@
 ## 형식
 
 ```
-type : 설명
+type: 설명
 ```
 
 ## Type 목록
@@ -25,9 +25,9 @@ type : 설명
 ## 예시
 
 ```
-feat : 로그인 폼 컴포넌트 추가
-fix : 프로그램 목록 조회 오류 수정
-refactor : cn 유틸 함수 타입 개선
-docs : CLAUDE.md 코드 컨벤션 문서 추가
-chore : ESLint 규칙 추가
+feat: 로그인 폼 컴포넌트 추가
+fix: 프로그램 목록 조회 오류 수정
+refactor: cn 유틸 함수 타입 개선
+docs: CLAUDE.md 코드 컨벤션 문서 추가
+chore: ESLint 규칙 추가
 ```

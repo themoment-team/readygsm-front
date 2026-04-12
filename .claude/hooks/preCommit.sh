@@ -1,8 +1,10 @@
 #!/bin/bash
 # PreCommit: 커밋 메시지 형식 검증
 # 허용 형식: type(scope?): description 또는 type: description
+# 사용법: bash .claude/hooks/preCommit.sh <commit-msg-file>
 
-COMMIT_MSG="$1"
+COMMIT_MSG_FILE="$1"
+COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
 
 ALLOWED_TYPES="feat|fix|refactor|style|docs|test|chore|build|ci|revert|merge"
 

@@ -1,0 +1,1 @@
+bash .claude/hooks/preCommit.sh "$1"

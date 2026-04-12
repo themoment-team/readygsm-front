@@ -120,5 +120,7 @@ export const exampleUrl = {
 
 ## Claude 행동 규칙
 
-- 작업 완료 후 자동으로 변경사항을 커밋하세요. 커밋 전 메시지만 확인받으세요.
+- 작업 완료 후 자동으로 변경사항을 커밋하세요.
 - 커밋 메시지는 `.claude/commands/commit/references/scope-guide.md` 형식을 따르세요.
+- **커밋은 반드시 Bash 도구로 git 명령어를 직접 실행하세요.** `/commit` Skill은 사용자가 명시적으로 `/commit`을 입력할 때만 사용합니다. 일반 작업 후 자동 커밋 시 Skill 도구를 호출하지 마세요.
+- `git add .` 대신 변경된 파일을 명시적으로 스테이징하세요. `.env`, `.env.local` 등 환경변수 파일은 절대 포함하지 마세요.
