@@ -1,0 +1,4 @@
+# 리뷰어 목록 (GitHub username, 한 줄에 하나씩)
+seoxeon09
+yeondon125
+

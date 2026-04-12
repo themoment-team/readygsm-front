@@ -51,6 +51,36 @@ bash .claude/commands/pr-draft/scripts/create-pr.sh "<제목>" "<본문>"
 > 집중 리뷰 요청 사항 (없으면 섹션 삭제)
 ```
 
+## 자동 설정
+
+### Assignee
+
+PR 생성자(`@me`)가 자동으로 지정됩니다.
+
+### Label
+
+브랜치 prefix를 기반으로 자동 감지됩니다:
+
+| 브랜치 prefix | 라벨                     |
+| ------------- | ------------------------ |
+| `feat/`       | `✨ feat - 기능 개발`    |
+| `fix/`        | `🐛 fix - 버그 수정`     |
+| `docs/`       | `📝 docs - 문서 작업`    |
+| `refactor/`   | `♻️ refactor - 리팩토링` |
+| `chore/`      | `🔧 chore - 기타 작업`   |
+| `design/`     | `🎨 design - UI/UX 변경` |
+| `perf/`       | `💪 perf - 성능 개선`    |
+
+### Reviewers
+
+`.claude/commands/pr-draft/reviewers.txt`에 GitHub username을 한 줄씩 추가하세요:
+
+```
+# 예시
+username1
+username2
+```
+
 ## 주의사항
 
 - `gh` CLI가 설치되어 있어야 합니다 (`gh auth login` 인증 필요)
