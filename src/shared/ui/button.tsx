@@ -8,13 +8,15 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        neutral: 'cursor-not-allowed border-transparent bg-[#F1F5F9] text-[#94A3B8]',
-        primary: 'cursor-pointer border-transparent bg-[#4A80F8] text-white hover:bg-[#3D6BD0]',
-        danger: 'cursor-pointer border-transparent bg-[#F04636] text-white hover:bg-[#D42817]',
+        neutral: 'cursor-not-allowed border-transparent bg-base-fill text-slate-utility',
+        primary:
+          'cursor-pointer border-transparent bg-brand-primary text-pure-white hover:bg-brand-primary/90',
+        danger:
+          'cursor-pointer border-transparent bg-error-red text-pure-white hover:bg-error-red/90',
         outlinePrimary:
-          'cursor-pointer border-[#4A80F8] bg-transparent text-[#4A80F8] hover:bg-[#4A80F8]/10',
+          'cursor-pointer border-brand-primary bg-transparent text-brand-primary hover:bg-brand-primary/10',
         outlineDanger:
-          'cursor-pointer border-[#F04636] bg-transparent text-[#F04636] hover:bg-[#F04636]/10 ',
+          'cursor-pointer border-error-red bg-transparent text-error-red hover:bg-error-red/10 ',
       },
       size: {
         sm: 'h-9 rounded-[0.5rem] px-4',

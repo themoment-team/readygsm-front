@@ -34,14 +34,14 @@ function SelectTrigger({ className, children, ...props }: SelectPrimitive.Trigge
     <SelectPrimitive.Trigger
       data-slot="select-trigger"
       className={cn(
-        "flex h-9 w-30 items-center justify-between rounded-[0.5rem] border border-[#CBD5E1] bg-white py-2 pr-4 pl-3 text-sm leading-5 font-normal whitespace-nowrap text-[#292B2F] transition-colors outline-none select-none hover:border-[#97A2AE] disabled:cursor-not-allowed disabled:opacity-50 aria-expanded:border-[#4A80F8] data-placeholder:text-[#94A3B8] [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "border-border-variant bg-pure-white text-neutral-dark hover:border-soft-gray aria-expanded:border-brand-primary data-placeholder:text-slate-utility flex h-9 w-30 items-center justify-between rounded-[0.5rem] border py-2 pr-4 pl-3 text-sm leading-5 font-normal whitespace-nowrap transition-colors outline-none select-none disabled:cursor-not-allowed disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className,
       )}
       {...props}
     >
       {children}
       <SelectPrimitive.Icon
-        render={<ChevronDownIcon className="pointer-events-none size-4 text-[#94A3B8]" />}
+        render={<ChevronDownIcon className="text-slate-utility pointer-events-none size-4" />}
       />
     </SelectPrimitive.Trigger>
   );
@@ -75,12 +75,12 @@ function SelectContent({
           data-slot="select-content"
           data-align-trigger={alignItemWithTrigger}
           className={cn(
-            'data-[side=bottom]:slide-in-from-top-2 data-[side=inline-end]:slide-in-from-left-2 data-[side=inline-start]:slide-in-from-right-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 relative isolate z-50 max-h-(--available-height) w-(--anchor-width) origin-(--transform-origin) overflow-x-hidden overflow-y-auto rounded-[0.5rem] border border-[#CBD5E1] bg-white p-1 text-[#292B2F] shadow-none duration-100 data-[align-trigger=true]:animate-none',
+            'data-[side=bottom]:slide-in-from-top-2 data-[side=inline-end]:slide-in-from-left-2 data-[side=inline-start]:slide-in-from-right-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 border-border-variant bg-pure-white text-neutral-dark relative isolate z-50 max-h-(--available-height) w-(--anchor-width) origin-(--transform-origin) overflow-x-hidden overflow-y-auto rounded-[0.5rem] border p-1 shadow-none duration-100 data-[align-trigger=true]:animate-none',
             className,
           )}
           {...props}
         >
-          <SelectPrimitive.List className="max-h-40 overflow-y-auto [scrollbar-color:#D1D5DB_transparent] [scrollbar-width:thin] [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-[#E5E7EB]">
+          <SelectPrimitive.List className="[&::-webkit-scrollbar-thumb]:bg-neutral-light max-h-40 overflow-y-auto [scrollbar-color:var(--border-variant)_transparent] [scrollbar-width:thin] [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-thumb]:rounded-full">
             {children}
           </SelectPrimitive.List>
         </SelectPrimitive.Popup>
@@ -93,7 +93,7 @@ function SelectLabel({ className, ...props }: SelectPrimitive.GroupLabel.Props) 
   return (
     <SelectPrimitive.GroupLabel
       data-slot="select-label"
-      className={cn('px-3 py-1.5 text-sm leading-5 font-semibold text-[#292B2F]', className)}
+      className={cn('text-neutral-dark px-3 py-1.5 text-sm leading-5 font-semibold', className)}
       {...props}
     />
   );
@@ -104,7 +104,7 @@ function SelectItem({ className, children, ...props }: SelectPrimitive.Item.Prop
     <SelectPrimitive.Item
       data-slot="select-item"
       className={cn(
-        'relative flex h-8 w-full cursor-pointer items-center rounded-[0.5rem] bg-white pr-2 pl-3 text-sm leading-5 font-normal text-[#292B2F] outline-hidden select-none hover:bg-[#F8FAFC] data-disabled:cursor-not-allowed data-disabled:opacity-50',
+        'bg-pure-white text-neutral-dark hover:bg-ghost-white relative flex h-8 w-full cursor-pointer items-center rounded-[0.5rem] pr-2 pl-3 text-sm leading-5 font-normal outline-hidden select-none data-disabled:cursor-not-allowed data-disabled:opacity-50',
         className,
       )}
       {...props}
