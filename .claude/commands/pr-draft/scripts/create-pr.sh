@@ -19,7 +19,7 @@ fi
 CURRENT_BRANCH=$(git branch --show-current)
 
 # base 브랜치 결정
-if git show-ref --quiet refs/heads/develop; then
+if git show-ref --quiet refs/heads/develop || git show-ref --quiet refs/remotes/origin/develop; then
   BASE_BRANCH="develop"
 else
   BASE_BRANCH="main"

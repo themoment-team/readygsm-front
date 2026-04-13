@@ -15,12 +15,12 @@ echo ""
 
 # 인라인 리뷰 코멘트 (코드 라인에 달린 것) — ID 포함
 echo "--- 인라인 코멘트 ---"
-gh api "repos/{owner}/{repo}/pulls/$PR_NUMBER/comments" \
+gh api "repos/:owner/:repo/pulls/$PR_NUMBER/comments" \
   --jq '.[] | "ID: \(.id)\n파일: \(.path):\(.line // .original_line)\n작성자: \(.user.login)\n내용: \(.body)\n---"'
 
 echo ""
 
 # 전체 리뷰 코멘트 (PR 전체에 달린 것) — ID 포함
 echo "--- 전체 리뷰 ---"
-gh api "repos/{owner}/{repo}/pulls/$PR_NUMBER/reviews" \
+gh api "repos/:owner/:repo/pulls/$PR_NUMBER/reviews" \
   --jq '.[] | select(.body != "") | "ID: \(.id)\n작성자: \(.user.login) [\(.state)]\n내용: \(.body)\n---"'
