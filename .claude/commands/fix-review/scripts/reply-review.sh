@@ -18,11 +18,16 @@ if [[ -z "$TYPE" || -z "$ID" || -z "$MESSAGE" ]]; then
 fi
 
 if [[ "$TYPE" == "inline" ]]; then
-  gh api "repos/{owner}/{repo}/pulls/comments/$ID/replies" \
+  PR_NUMBER=$(gh pr view --json number --jq '.number' 2>/dev/null)
+  if [[ -z "$PR_NUMBER" ]]; then
+    echo "❌ 현재 브랜치에 열린 PR이 없습니다."
+    exit 1
+  fi
+  gh api "repos/:owner/:repo/pulls/$PR_NUMBER/comments/$ID/replies" \
     --method POST \
     --field body="$MESSAGE"
 elif [[ "$TYPE" == "general" ]]; then
-  gh api "repos/{owner}/{repo}/issues/$ID/comments" \
+  gh api "repos/:owner/:repo/issues/$ID/comments" \
     --method POST \
     --field body="$MESSAGE"
 else
