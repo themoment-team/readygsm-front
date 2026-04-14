@@ -20,8 +20,8 @@ const buttonVariants = cva(
       },
       size: {
         sm: 'h-9 rounded-[0.5rem] px-4',
-        md: 'h-11 rounded-[0.5rem] px-6',
-        full: 'h-13 w-full rounded-[0.5rem] px-4',
+        md: 'h-11 rounded-[0.5rem] px-6 text-[1.125rem]',
+        full: 'h-13 w-full rounded-[0.5rem] px-4 text-[1rem] leading-6',
       },
     },
     defaultVariants: {
