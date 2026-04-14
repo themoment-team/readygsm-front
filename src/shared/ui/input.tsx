@@ -16,7 +16,7 @@ function Input({ className, type, error = false, ...props }: InputProps) {
       className={cn(
         'bg-pure-white text-neutral-dark placeholder:text-slate-utility min-w-0 rounded-[0.5rem] border px-3 py-2 text-sm leading-5 font-normal transition-colors outline-none disabled:cursor-not-allowed disabled:opacity-50',
         error
-          ? 'border-error-red hover:border-error-red focus-visible:border-error-red'
+          ? 'border-error-red focus-visible:border-error-red'
           : 'border-border-variant hover:border-soft-gray focus-visible:border-brand-primary',
         className,
       )}
