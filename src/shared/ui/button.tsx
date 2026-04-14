@@ -9,7 +9,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         neutral: 'cursor-not-allowed border-transparent bg-base-fill text-slate-utility',
-        primary:
+        default:
           'cursor-pointer border-transparent bg-brand-primary text-pure-white hover:bg-brand-primary/90',
         danger:
           'cursor-pointer border-transparent bg-error-red text-pure-white hover:bg-error-red/90',
