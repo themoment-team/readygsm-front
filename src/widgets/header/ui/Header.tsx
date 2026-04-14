@@ -15,14 +15,14 @@ const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
-    <header className="w-full bg-white">
-      <div className="mx-auto flex h-25 max-w-480 items-center justify-between px-80">
-        <Link href="/" className="flex items-center gap-2">
+    <header className={cn('w-full bg-white')}>
+      <div className={cn('mx-auto flex h-25 max-w-480 items-center justify-between px-80')}>
+        <Link href="/" className={cn('flex items-center gap-2')}>
           <Logo />
-          <span className="text-[1.5rem] font-bold text-[#222222]">Ready, GSM</span>
+          <span className={cn('text-[1.5rem] font-bold text-[#222222]')}>Ready, GSM</span>
         </Link>
 
-        <nav className="flex items-center gap-12">
+        <nav className={cn('flex items-center gap-12')}>
           {NAV_LINKS.map((link) => {
             const isActive = link.href === '/' ? pathname === '/' : pathname.startsWith(link.href);
 
