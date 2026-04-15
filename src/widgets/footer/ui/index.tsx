@@ -27,7 +27,6 @@ const Footer = () => {
   return (
     <footer
       className={cn(
-        'relative',
         'flex',
         'w-full',
         'items-center',
