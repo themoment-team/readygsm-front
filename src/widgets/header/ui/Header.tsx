@@ -13,6 +13,8 @@ import { NAV_LINKS } from '../model/navigation';
 const Header = () => {
   const pathname = usePathname();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const isAdmin = pathname.startsWith('/admin');
+  const links = isAdmin ? NAV_LINKS.admin : NAV_LINKS.client;
 
   return (
     <header className={cn('w-full bg-white')}>
@@ -23,7 +25,7 @@ const Header = () => {
         </Link>
 
         <nav className={cn('flex items-center gap-12')}>
-          {NAV_LINKS.map((link) => {
+          {links.map((link) => {
             const isActive = link.href === '/' ? pathname === '/' : pathname.startsWith(link.href);
 
             return (
