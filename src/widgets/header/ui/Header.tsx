@@ -10,15 +10,22 @@ import { cn } from '@/shared/lib';
 
 import { NAV_LINKS } from '../model/navigation';
 
+type Role = 'guest' | 'client' | 'admin';
+
 const Header = () => {
   const pathname = usePathname();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [role, setRole] = useState<Role>('admin'); // 임시로 admin으로 설정함
   const isAdmin = pathname.startsWith('/admin');
   const links = isAdmin ? NAV_LINKS.admin : NAV_LINKS.client;
 
   return (
     <header className={cn('w-full bg-white')}>
-      <div className={cn('mx-auto flex h-25 max-w-480 items-center justify-between px-80')}>
+      <div
+        className={cn(
+          'mx-auto flex h-25 max-w-480 items-center justify-between',
+          role === 'admin' && !isAdmin ? 'pr-[6.69rem] pl-80' : 'px-80',
+        )}
+      >
         <Link href="/" className={cn('flex items-center gap-2')}>
           <Logo />
           <span className={cn('text-[1.5rem] font-bold text-[#222222]')}>Ready, GSM</span>
@@ -49,17 +56,29 @@ const Header = () => {
           })}
         </nav>
 
-        <button
-          onClick={() => setIsLoggedIn((prev) => !prev)}
-          className={cn(
-            'inline-flex items-center justify-center rounded-lg px-6 py-3 text-[1.125rem] leading-none font-medium',
-            isLoggedIn
-              ? 'border border-[#2563EB] text-[#2563EB]'
-              : 'bg-[#2563EB] text-white hover:bg-[#1D4ED8]',
+        <div className={cn('flex items-center gap-4')}>
+          <button
+            onClick={() => setRole((prev) => (prev === 'guest' ? 'client' : 'guest'))} // 임시
+            className={cn(
+              'inline-flex items-center justify-center rounded-lg px-6 py-3 text-[1.125rem] leading-none font-medium',
+              role === 'guest'
+                ? 'bg-[#2563EB] text-white hover:bg-[#1D4ED8]'
+                : 'border border-[#2563EB] text-[#2563EB]',
+            )}
+          >
+            {role === 'guest' ? '로그인' : '로그아웃'}
+          </button>
+          {role === 'admin' && !isAdmin && (
+            <Link
+              href="/admin"
+              className={cn(
+                'inline-flex items-center justify-center rounded-lg bg-[#2563EB] px-6 py-3 text-[1.125rem] leading-none font-medium text-white hover:bg-[#1D4ED8]',
+              )}
+            >
+              어드민 페이지로 이동
+            </Link>
           )}
-        >
-          {isLoggedIn ? '로그아웃' : '로그인'}
-        </button>
+        </div>
       </div>
     </header>
   );
