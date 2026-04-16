@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 
 import { Logo } from '@/shared/assets';
 import { cn } from '@/shared/lib';
+import { Button, buttonVariants } from '@/shared/ui';
 
 import { NAV_LINKS } from '../model/navigation';
 
@@ -57,24 +58,15 @@ const Header = () => {
         </nav>
 
         <div className={cn('flex items-center gap-4')}>
-          <button
+          <Button
             onClick={() => setRole((prev) => (prev === 'guest' ? 'client' : 'guest'))} // 임시
-            className={cn(
-              'inline-flex items-center justify-center rounded-lg px-6 py-3 text-[1.125rem] leading-none font-medium',
-              role === 'guest'
-                ? 'bg-brand-primary text-white hover:bg-[#1D4ED8]'
-                : 'border-brand-primary text-brand-primary border',
-            )}
+            variant={role === 'guest' ? 'default' : 'outlinePrimary'}
+            size="md"
           >
             {role === 'guest' ? '로그인' : '로그아웃'}
-          </button>
+          </Button>
           {role === 'admin' && !isAdmin && (
-            <Link
-              href="/admin"
-              className={cn(
-                'bg-brand-primary inline-flex items-center justify-center rounded-lg px-6 py-3 text-[1.125rem] leading-none font-medium text-white hover:bg-[#1D4ED8]',
-              )}
-            >
+            <Link href="/admin" className={cn(buttonVariants({ variant: 'default', size: 'md' }))}>
               어드민 페이지로 이동
             </Link>
           )}
