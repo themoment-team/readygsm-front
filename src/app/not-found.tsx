@@ -10,10 +10,10 @@ const NotFound = () => {
 
   return (
     <div className={cn('flex h-[calc(100vh-72px)] flex-col items-center justify-center gap-4')}>
-      <h1 className={cn('text-center text-[3rem] leading-[3.6rem] font-bold text-[#4A80F8]')}>
+      <h1 className={cn('text-brand-primary text-center text-5xl leading-[3.6rem] font-bold')}>
         404 Not Found
       </h1>
-      <p className={cn('text-center text-[1.5rem] leading-9 font-normal text-[#656E82]')}>
+      <p className={cn('text-secondary-slate text-center text-2xl leading-9 font-normal')}>
         잘못된 경로입니다. 존재하지 않는 주소를 입력하셨거나, <br />
         요청하신 페이지의 주소가 변경, 삭제되어 찾을 수 없습니다.
       </p>
