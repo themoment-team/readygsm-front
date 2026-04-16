@@ -9,7 +9,7 @@ const NotFound = () => {
   const router = useRouter();
 
   return (
-    <div className={cn('flex h-[calc(100vh-72px)] flex-col items-center justify-center gap-4')}>
+    <div className={cn('flex h-[calc(100vh-6.25rem)] flex-col items-center justify-center gap-4')}>
       <h1 className={cn('text-brand-primary text-center text-5xl leading-[3.6rem] font-bold')}>
         404 Not Found
       </h1>
