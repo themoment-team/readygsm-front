@@ -28,7 +28,7 @@ const Header = () => {
       >
         <Link href="/" className={cn('flex items-center gap-2')}>
           <Logo />
-          <span className={cn('text-[1.5rem] font-bold text-[#222222]')}>Ready, GSM</span>
+          <span className={cn('text-neutral-dark text-[1.5rem] font-bold')}>Ready, GSM</span>
         </Link>
 
         <nav className={cn('flex items-center gap-12')}>
@@ -41,13 +41,13 @@ const Header = () => {
                 href={link.href}
                 className={cn(
                   'relative flex flex-col items-center text-2xl leading-[120%] font-semibold transition-colors',
-                  isActive ? 'text-[#292B2F]' : 'text-[#9EA7B9] hover:text-[#747B88]',
+                  isActive ? 'text-neutral-dark' : 'text-soft-gray hover:text-dark-utility',
                 )}
               >
                 {link.label}
                 <span
                   className={cn(
-                    'absolute -bottom-2 h-1 rounded-lg bg-[#2563EB] transition-[width] duration-300 ease-in-out',
+                    'bg-brand-primary absolute -bottom-2 h-1 rounded-lg transition-[width] duration-300 ease-in-out',
                     isActive ? 'w-5' : 'w-0',
                   )}
                 />
@@ -62,8 +62,8 @@ const Header = () => {
             className={cn(
               'inline-flex items-center justify-center rounded-lg px-6 py-3 text-[1.125rem] leading-none font-medium',
               role === 'guest'
-                ? 'bg-[#2563EB] text-white hover:bg-[#1D4ED8]'
-                : 'border border-[#2563EB] text-[#2563EB]',
+                ? 'bg-brand-primary text-white hover:bg-[#1D4ED8]'
+                : 'border-brand-primary text-brand-primary border',
             )}
           >
             {role === 'guest' ? '로그인' : '로그아웃'}
@@ -72,7 +72,7 @@ const Header = () => {
             <Link
               href="/admin"
               className={cn(
-                'inline-flex items-center justify-center rounded-lg bg-[#2563EB] px-6 py-3 text-[1.125rem] leading-none font-medium text-white hover:bg-[#1D4ED8]',
+                'bg-brand-primary inline-flex items-center justify-center rounded-lg px-6 py-3 text-[1.125rem] leading-none font-medium text-white hover:bg-[#1D4ED8]',
               )}
             >
               어드민 페이지로 이동
