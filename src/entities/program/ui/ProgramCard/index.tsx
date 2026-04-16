@@ -26,7 +26,7 @@ const ProgramCard = ({
       <header className={cn('flex items-center justify-between')}>
         <h2
           className={cn(
-            'text-[24px] leading-[1.2] font-semibold',
+            'text-[1.5rem] leading-[1.2] font-semibold',
             isSelected ? 'text-[#2563EB]' : 'text-[#292B2F]',
           )}
         >
@@ -34,7 +34,7 @@ const ProgramCard = ({
         </h2>
         <p
           className={cn(
-            'text-[24px] leading-[1.2] font-semibold',
+            'text-[1.5rem] leading-[1.2] font-semibold',
             isSelected ? 'text-[#2563EB]' : 'text-[#292B2F]',
           )}
         >
@@ -44,7 +44,7 @@ const ProgramCard = ({
 
       <ul
         className={cn(
-          'mt-2 list-disc space-y-0.5 pl-5.25 text-[14px] leading-[1.4] font-normal text-[#656E82]',
+          'mt-2 list-disc space-y-0.5 pl-5.25 text-[0.875rem] leading-[1.4] font-normal text-[#656E82]',
         )}
       >
         {content.map((item, index) => (
@@ -52,7 +52,7 @@ const ProgramCard = ({
         ))}
       </ul>
 
-      <p className={cn('mt-4 text-[14px] leading-[1.4] font-normal text-[#656E82]')}>{date}</p>
+      <p className={cn('mt-2 text-[0.875rem] leading-[1.4] font-normal text-[#656E82]')}>{date}</p>
     </section>
   );
 };
