@@ -16,7 +16,7 @@ const LINKS = [
     link: 'https://official.hellogsm.kr/policy/copyright',
   },
   {
-    text: '찾아오시는 길',
+    text: '찾아오시는길',
     link: 'https://official.hellogsm.kr/about/location',
   },
 ] as const;
@@ -32,10 +32,12 @@ const Footer = () => {
         'items-center',
         'justify-center',
         'bg-gray-50',
-        'p-15',
-        'lg:px-25',
-        'xl:px-61',
-        'fhd:px-80',
+        'px-80',
+        'py-5',
+        // 'md:px-10',
+        // 'lg:px-15',
+        // 'xl:px-20',
+        // 'fhd:px-80',
       )}
     >
       <div
@@ -68,7 +70,7 @@ const Footer = () => {
               ALL RIGHTS RESERVED.
             </p>
 
-            <div className={cn('flex', 'flex-col', 'gap-2', 'md:flex-row', 'md:gap-6')}>
+            <div className={cn('flex', 'flex-col', 'gap-6', 'md:flex-row', 'md:gap-6')}>
               {LINKS.map(({ text, link }) => (
                 <a
                   key={text}
