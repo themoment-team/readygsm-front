@@ -89,7 +89,7 @@ const Footer = () => {
             className={cn(
               'text-[0.875rem]/[1.25rem]',
               'font-normal',
-              'text-[#6b7686]',
+              'text-dark-utility',
               'md:text-right',
             )}
           >
