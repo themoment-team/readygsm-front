@@ -70,7 +70,7 @@ const Footer = () => {
               ALL RIGHTS RESERVED.
             </p>
 
-            <div className={cn('flex', 'flex-col', 'gap-6', 'md:flex-row', 'md:gap-6')}>
+            <div className={cn('flex', 'flex-col', 'gap-6', 'md:flex-row')}>
               {LINKS.map(({ text, link }) => (
                 <a
                   key={text}

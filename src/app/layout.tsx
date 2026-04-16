@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 import { TanStackProvider } from '@/shared/lib';
 import { pretendard } from '@/shared/styles';
-import Footer from '@/widgets/footer/ui';
+import { Footer } from '@/widgets/footer';
 
 import '@/shared/styles/globals.css';
 
