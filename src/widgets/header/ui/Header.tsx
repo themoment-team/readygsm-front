@@ -27,7 +27,7 @@ const Header = () => {
           role === 'admin' && !isAdmin ? 'pr-[6.69rem] pl-80' : 'px-80',
         )}
       >
-        <Link href="/" className={cn('flex items-center gap-2')}>
+        <Link href="/" className={cn('flex items-center gap-3')}>
           <Logo />
           <span className={cn('text-neutral-dark text-[1.5rem] font-bold')}>Ready, GSM</span>
         </Link>
