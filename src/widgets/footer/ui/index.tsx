@@ -33,7 +33,7 @@ const Footer = () => {
         'justify-center',
         'bg-gray-50',
         'px-80',
-        'py-5',
+        'py-[1.3438rem]',
         // 'md:px-10',
         // 'lg:px-15',
         // 'xl:px-20',
