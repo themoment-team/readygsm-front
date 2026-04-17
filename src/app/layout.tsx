@@ -23,9 +23,8 @@ const RootLayout = ({
         <TanStackProvider>
           <Header />
           {children}
+          <Footer />
         </TanStackProvider>
-        <TanStackProvider>{children}</TanStackProvider>
-        <Footer />
       </body>
     </html>
   );
