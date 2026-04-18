@@ -99,7 +99,9 @@ const FaqSection = () => {
                           {item.question}
                         </span>
                         <span className={cn('ml-4 shrink-0')}>
-                          <ArrowIcon color={isOpen ? '#4A80F8' : '#292B2F'} />
+                          <ArrowIcon
+                            color={isOpen ? 'var(--brand-primary)' : 'var(--neutral-dark)'}
+                          />
                         </span>
                       </div>
                       <div
