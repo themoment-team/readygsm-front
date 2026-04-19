@@ -69,7 +69,7 @@ const FaqSection = () => {
       <div className={cn('w-full max-w-150')}>
         <h1 className={cn('text-neutral-dark text-2xl font-semibold')}>자주 묻는 질문</h1>
         <p className={cn('text-secondary-slate mt-2 mb-9 text-sm font-normal')}>
-          자주 묻는 질문을 여기서 검색하거나 확인할 수 있습니다.
+          자주 묻는 질문을 여기서 클릭하여 자세히 확인할 수 있습니다.
         </p>
         <ul className={cn('flex flex-col gap-4')}>
           {faqList.map((item, index) => {
