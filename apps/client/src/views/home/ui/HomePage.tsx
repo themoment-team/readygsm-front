@@ -1,4 +1,3 @@
-import { getActivityList } from '@shared/entities/activity';
 import { cn } from '@shared/lib';
 
 import {
@@ -9,16 +8,10 @@ import {
   HomeSection5,
 } from '@/widgets/homeSection';
 
-const HomePage = async () => {
-  const result = await getActivityList();
-  const activities = result?.data ?? [];
-
-  const start = activities[0]?.registrationStartAt;
-  const end = activities[activities.length - 1]?.registrationEndAt;
-
+const HomePage = () => {
   return (
     <div className={cn('mx-auto flex w-full max-w-480 flex-col')}>
-      <HomeSection1 start={start} end={end} />
+      <HomeSection1 />
       <div
         className={cn(
           'bg-pure-white relative z-10 flex flex-col rounded-t-[1.5rem]',
