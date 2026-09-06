@@ -52,7 +52,7 @@ const ChatbotPanel = ({ onClose, onUnauthorized }: ChatbotPanelProps) => {
      */
     <div
       className={cn(
-        'pointer-events-none fixed inset-y-0 right-6 z-50 flex items-center lg:right-32',
+        'pointer-events-none fixed inset-y-0 right-6 z-40 flex items-center lg:right-32',
       )}
     >
       <div
