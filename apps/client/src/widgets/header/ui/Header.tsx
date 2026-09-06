@@ -11,10 +11,10 @@ import { toast } from 'react-toastify';
 
 import { HamburgerIcon, Logo } from '@shared/assets';
 import { usePostSignOut } from '@shared/entities/auth';
+import { useGetMyInfo, userQueryKeys } from '@shared/entities/user';
 import { cn } from '@shared/lib';
 import { Button } from '@shared/ui';
 
-import { useGetMyInfo, userQueryKeys } from '@/entities/user';
 import { LoginModal } from '@/features/auth';
 
 import { NAV_LINKS } from '../model/navigation';

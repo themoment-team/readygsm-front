@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import type { UserRoleType } from '@/entities/user';
+import type { UserRoleType } from '@shared/entities/user';
 
 export const UserRoleFormSchema = z.object({
   email: z.string().email('유효한 이메일을 입력해주세요'),

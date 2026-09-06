@@ -50,6 +50,8 @@ const Header = () => {
 
   const getIsActive = (href: string) => activeLink.href === href;
 
+  if (pathname === '/login' || pathname.startsWith('/oauth/')) return null;
+
   return (
     <header className={cn('sticky top-0 z-50 w-full bg-white')}>
       <div

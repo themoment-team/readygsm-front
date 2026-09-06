@@ -1,7 +1,7 @@
 import { getActivityById } from '@shared/entities/activity';
 import getMyApplication from '@shared/entities/application/api/getMyApplication';
+import getMyInfo from '@shared/entities/user/api/getMyInfo';
 
-import getMyInfo from '@/entities/user/api/getMyInfo';
 import { ApplicationSection } from '@/widgets/applicationSection';
 
 const ApplicationsPage = async () => {

@@ -6,11 +6,11 @@ import { toast } from 'react-toastify';
 
 import { type ActivityType } from '@shared/entities/activity';
 import { type ApplicationType } from '@shared/entities/application';
+import { type UserType } from '@shared/entities/user';
 import { cn } from '@shared/lib';
 import { Button, EmptyState, SectionHeader } from '@shared/ui';
 
 import { ProgramCard } from '@/entities/program';
-import { type UserType } from '@/entities/user';
 import { CancelApplyModal } from '@/features/cancelApply';
 
 interface ApplicationSectionProps {

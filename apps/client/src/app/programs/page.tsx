@@ -4,8 +4,8 @@ import { getActivityArchiveList, getActivityList } from '@shared/entities/activi
 
 export const dynamic = 'force-dynamic';
 import getMyApplication from '@shared/entities/application/api/getMyApplication';
+import getMyInfo from '@shared/entities/user/api/getMyInfo';
 
-import getMyInfo from '@/entities/user/api/getMyInfo';
 import { ProgramsPage } from '@/views/programs';
 
 export const metadata: Metadata = {

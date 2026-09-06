@@ -2,7 +2,8 @@ import { getOAuthUrl } from '@shared/entities/auth';
 
 export const useLogin = () => {
   const saveReturnUrl = () => {
-    sessionStorage.setItem('oauth_return_url', window.location.pathname);
+    const params = new URLSearchParams(window.location.search);
+    sessionStorage.setItem('oauth_return_url', params.get('returnUrl') ?? '/');
   };
 
   const handleGoogleLogin = () => {

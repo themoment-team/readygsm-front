@@ -11,6 +11,7 @@ import {
 } from '@shared/lib';
 import { pretendard } from '@shared/styles';
 
+import { ChatbotLauncher } from '@/widgets/chatbot';
 import { Footer } from '@/widgets/footer';
 import { Header } from '@/widgets/header';
 
@@ -77,6 +78,7 @@ const RootLayout = ({
           <Header />
           <div className={cn('flex-1')}>{children}</div>
           <Footer />
+          <ChatbotLauncher />
           <ToastProvider />
         </TanStackProvider>
       </body>
