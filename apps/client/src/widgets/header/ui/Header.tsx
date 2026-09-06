@@ -121,7 +121,7 @@ const Header = () => {
           <div
             className={cn(
               'fixed top-18.75 right-0 z-40 overflow-y-auto bg-white lg:top-20 xl:hidden',
-              'max-h-[calc(100dvh-4.6875rem)] lg:max-h-[calc(100dvh-5rem)]',
+              'h-[calc(100dvh-4.6875rem)] lg:h-[calc(100dvh-5rem)]',
               'inline-flex min-w-46.5 flex-col items-end pt-9 pr-6 pb-34.25',
             )}
           >
