@@ -21,7 +21,7 @@ const ChatMessage = ({ message, onRetry }: ChatMessageProps) => {
       {hasContent && (
         <p
           className={cn(
-            'max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-6 whitespace-pre-wrap',
+            'max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-6 break-words whitespace-pre-wrap',
             isUser
               ? 'bg-brand-primary text-pure-white rounded-tr-sm'
               : 'bg-pure-white text-neutral-dark border-neutral-light rounded-tl-sm border border-solid',
