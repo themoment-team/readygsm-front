@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { GoogleIcon, KakaoIcon } from '@shared/assets';
 import { cn } from '@shared/lib';
 import { Modal } from '@shared/ui';
@@ -14,7 +16,17 @@ const LoginModal = ({ isOpen, onClose }: LoginModalProps) => {
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} className={cn('p-6')}>
-      <div className={cn('flex flex-col items-center gap-8')}>
+      <div className={cn('relative flex flex-col items-center gap-8')}>
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="로그인 창 닫기"
+          className={cn(
+            'absolute top-0 right-0 flex size-5 cursor-pointer items-center justify-center',
+          )}
+        >
+          <Image src="/icons/Icon.png" alt="" width={20} height={20} />
+        </button>
         <h2 className={cn('text-neutral-dark text-2xl font-semibold tracking-[-0.144px]')}>
           로그인
         </h2>
