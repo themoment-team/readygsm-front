@@ -10,6 +10,7 @@ import { CompletionMessage } from '@shared/ui';
 
 import { ProgramCard } from '@/entities/program';
 import { LoginModal } from '@/features/auth';
+import { trackEvent } from '@/shared/lib';
 import { ApplicationForm } from '@/widgets/applyDepartment';
 import { HomeProgramSection } from '@/widgets/homeProgramSection';
 
@@ -37,6 +38,7 @@ const ProgramsPage = ({
       return;
     }
 
+    trackEvent('apply_form_open', { activity_id: activity.id, activity_name: activity.name });
     setSelectedActivity(activity);
   };
 
@@ -127,6 +129,7 @@ const ProgramsPage = ({
             </div>
             <ApplicationForm
               activityId={selectedActivity.id}
+              activityName={selectedActivity.name}
               userId={userId}
               onSuccess={() => setIsApplicationCompleted(true)}
             />

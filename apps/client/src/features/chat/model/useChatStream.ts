@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { getApiErrorStatus } from '@shared/api';
 
 import { type ChatFailReasonType, type ChatMessageType, usePostChatSession } from '@/entities/chat';
+import { trackEvent } from '@/shared/lib';
 
 import { askChat, toFailReason } from './askChat';
 
@@ -124,6 +125,8 @@ export const useChatStream = ({ onUnauthorized }: UseChatStreamOptions) => {
       const trimmed = question.trim();
       if (!trimmed || trimmed.length > CHAT_MESSAGE_MAX_LENGTH) return;
 
+      trackEvent('chatbot_message', { message_length: trimmed.length });
+
       const key = Date.now();
       const botId = `bot-${key}`;
 
@@ -148,6 +151,7 @@ export const useChatStream = ({ onUnauthorized }: UseChatStreamOptions) => {
       }
 
       if (failReason) {
+        trackEvent('chatbot_error', { fail_reason: failReason });
         updateMessage(botId, { status: 'failed', failReason });
         if (failReason === 'unauthorized') onUnauthorized();
       }
