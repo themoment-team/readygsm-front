@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-import { SITE_URL } from './siteConfig';
+import { SITE_URL } from './config/siteConfig';
 
 const sitemap = (): MetadataRoute.Sitemap => [
   {

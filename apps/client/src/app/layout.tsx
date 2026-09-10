@@ -9,7 +9,7 @@ import { Footer } from '@/widgets/footer';
 import { Header } from '@/widgets/header';
 
 import './globals.css';
-import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from './siteConfig';
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from './config/siteConfig';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
