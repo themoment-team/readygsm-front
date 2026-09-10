@@ -1,4 +1,4 @@
-import { getActivityList } from '@shared/entities/activity';
+import { getActivityList } from '@shared/entities/activity/index.server';
 
 import { ActivityFormView } from '@/features/manageActivity';
 

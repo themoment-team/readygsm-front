@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 
-import { getActivityArchiveList, getActivityList } from '@shared/entities/activity';
-
-export const dynamic = 'force-dynamic';
-import getMyApplication from '@shared/entities/application/api/getMyApplication';
-import getMyInfo from '@shared/entities/user/api/getMyInfo';
+import { getActivityArchiveList, getActivityList } from '@shared/entities/activity/index.server';
+import { getMyApplication } from '@shared/entities/application/index.server';
+import { getMyInfo } from '@shared/entities/user/index.server';
 
 import { ProgramsPage } from '@/views/programs';
+
+export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: '프로그램 신청',
