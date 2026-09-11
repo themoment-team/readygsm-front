@@ -1,9 +1,8 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 import { activityUrl, post } from '@shared/api';
-import { revalidateActivityList } from '@shared/entities/activity/api/revalidateActivityList';
-import { activityQueryKeys } from '@shared/entities/activity/model/useGetActivityList';
 
+import { invalidateActivityList } from './invalidateActivityList';
 import type { toActivityFirstCreateReqDto, toActivityWithRegistrationReqDto } from './types';
 
 type ActivityReqDto =
@@ -14,10 +13,7 @@ const usePostActivityMutation = () => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (dto: ActivityReqDto) => post(activityUrl.postActivity(), dto),
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: activityQueryKeys.getActivityList() });
-      revalidateActivityList();
-    },
+    onSuccess: () => invalidateActivityList(queryClient),
   });
 };
 

@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 
 import { ConfirmModal } from '@shared/ui';
 
-import { useDeleteUser } from '@/features/adminUser/model/useDeleteUser';
+import { useDeleteUser } from '../model/useDeleteUser';
 
 interface DeleteUserModalProps {
   isOpen: boolean;

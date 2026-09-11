@@ -44,7 +44,7 @@ const ApplicantManagementSidebar = ({
               onClick={() => onSelectActivity(activity.id)}
               className={cn(
                 'flex w-full items-center overflow-hidden rounded-lg bg-white py-2.5 pr-3 pl-10 text-left text-sm leading-[1.4]',
-                selectedActivityId === activity.id ? 'text-[#292b2f]' : 'text-gray-400',
+                selectedActivityId === activity.id ? 'text-neutral-dark' : 'text-gray-400',
               )}
             >
               {activity.name}

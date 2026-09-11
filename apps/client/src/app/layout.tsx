@@ -1,14 +1,7 @@
 import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from 'next';
 
-import {
-  cn,
-  SITE_DESCRIPTION,
-  SITE_NAME,
-  SITE_URL,
-  TanStackProvider,
-  ToastProvider,
-} from '@shared/lib';
+import { cn, TanStackProvider, ToastProvider } from '@shared/lib';
 import { pretendard } from '@shared/styles';
 
 import { ChatbotLauncher } from '@/widgets/chatbot';
@@ -16,6 +9,7 @@ import { Footer } from '@/widgets/footer';
 import { Header } from '@/widgets/header';
 
 import './globals.css';
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from './config/siteConfig';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

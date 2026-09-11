@@ -1,7 +1,8 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 import { del } from '@shared/api';
-import { activityQueryKeys, revalidateActivityList } from '@shared/entities/activity';
+import { activityQueryKeys } from '@shared/entities/activity';
+import { revalidateActivityList } from '@shared/entities/activity/index.server';
 
 export const cancelApplyUrl = {
   deleteApply: () => '/v1/application/cancel',

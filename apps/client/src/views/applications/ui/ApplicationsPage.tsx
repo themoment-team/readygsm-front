@@ -1,6 +1,6 @@
-import { getActivityById } from '@shared/entities/activity';
-import getMyApplication from '@shared/entities/application/api/getMyApplication';
-import getMyInfo from '@shared/entities/user/api/getMyInfo';
+import { getActivityById } from '@shared/entities/activity/index.server';
+import { getMyApplication } from '@shared/entities/application/index.server';
+import { getMyInfo } from '@shared/entities/user/index.server';
 
 import { ApplicationSection } from '@/widgets/applicationSection';
 
