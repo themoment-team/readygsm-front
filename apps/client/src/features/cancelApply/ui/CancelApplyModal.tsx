@@ -19,18 +19,18 @@ const CancelApplyModal = ({ isOpen, onClose, userId, activityId }: CancelApplyMo
   const { cancelApply, isPending } = useCancelApply(userId, activityId);
 
   const handleConfirm = () => {
-    trackEvent('apply_cancel_submit', { activity_id: activityId });
+    trackEvent('apply_cancel_submit', { activity_id: String(activityId) });
 
     cancelApply(undefined, {
       onSuccess: () => {
-        trackEvent('apply_cancel_success', { activity_id: activityId });
+        trackEvent('apply_cancel_success', { activity_id: String(activityId) });
         toast.success('학과 체험이 취소되었습니다.');
         onClose();
       },
       onError: (error) => {
         trackEvent('apply_cancel_error', {
-          activity_id: activityId,
-          status: getApiErrorStatus(error) ?? 'unknown',
+          activity_id: String(activityId),
+          status: String(getApiErrorStatus(error) ?? 'unknown'),
         });
         toast.error(getApiErrorMessage(error, '취소 중 오류가 발생했습니다.'));
       },

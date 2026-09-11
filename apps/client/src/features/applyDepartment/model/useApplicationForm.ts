@@ -33,7 +33,7 @@ export const useApplicationForm = ({
   const queryClient = useQueryClient();
   const { mutate: postApplication } = usePostApplication();
 
-  const activityParams = { activity_id: activityId, activity_name: activityName };
+  const activityParams = { activity_id: String(activityId), activity_name: activityName };
 
   const form = useForm<ApplicationFormType>({
     resolver: zodResolver(ApplicationFormSchema),
@@ -79,7 +79,7 @@ export const useApplicationForm = ({
         onError: async (error) => {
           const status = getApiErrorStatus(error);
 
-          trackEvent('apply_error', { ...activityParams, status: status ?? 'unknown' });
+          trackEvent('apply_error', { ...activityParams, status: String(status ?? 'unknown') });
 
           if (status !== undefined && STALE_ACTIVITY_STATUSES.includes(status)) {
             queryClient.invalidateQueries({ queryKey: activityQueryKeys.getActivityList() });

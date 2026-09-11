@@ -8,13 +8,18 @@ import { sendGAEvent } from '@next/third-parties/google';
  */
 const IS_GA_ENABLED = Boolean(process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID);
 
+/**
+ * 식별자와 상태 코드는 숫자여도 문자열로 보낸다.
+ * GA4 맞춤 측정기준은 파라미터의 문자열 값만 읽어서, 숫자로 들어가면 (not set)으로 빠진다.
+ * 평균·합계를 낼 값(message_length)만 숫자로 둔다.
+ */
 interface ActivityParamsType {
-  activity_id: number;
+  activity_id: string;
   activity_name: string;
 }
 
-/** 서버가 상태 코드를 주지 않은 경우(네트워크 단절 등)를 GA4에서 구분하기 위한 값 */
-type ErrorStatusType = number | 'unknown';
+/** 서버가 상태 코드를 주지 않은 경우(네트워크 단절 등)는 'unknown'으로 보낸다 */
+type ErrorStatusType = string;
 
 /**
  * 이벤트별 파라미터 계약.
@@ -27,9 +32,9 @@ interface GaEventParamsMapType {
   apply_submit: ActivityParamsType;
   apply_success: ActivityParamsType;
   apply_error: ActivityParamsType & { status: ErrorStatusType };
-  apply_cancel_submit: { activity_id: number };
-  apply_cancel_success: { activity_id: number };
-  apply_cancel_error: { activity_id: number; status: ErrorStatusType };
+  apply_cancel_submit: { activity_id: string };
+  apply_cancel_success: { activity_id: string };
+  apply_cancel_error: { activity_id: string; status: ErrorStatusType };
   chatbot_open: Record<string, never>;
   chatbot_message: { message_length: number };
   chatbot_error: { fail_reason: string };

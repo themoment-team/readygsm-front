@@ -38,7 +38,10 @@ const ProgramsPage = ({
       return;
     }
 
-    trackEvent('apply_form_open', { activity_id: activity.id, activity_name: activity.name });
+    trackEvent('apply_form_open', {
+      activity_id: String(activity.id),
+      activity_name: activity.name,
+    });
     setSelectedActivity(activity);
   };
 
