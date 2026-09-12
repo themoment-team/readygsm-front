@@ -52,10 +52,21 @@ apps/{client,admin}/src/
 ├── widgets/   # Standalone composite UI blocks
 ├── features/  # Feature-scoped logic (auth, forms, etc.)
 ├── entities/  # Business entities local to this app: types, schemas, API hooks, UI
-└── (no local shared/ layer — cross-app shared code lives in packages/shared, see above)
+└── shared/    # App-local shared layer: code only this app needs (currently client only)
 ```
 
-**Import direction (strict):** `app` → `views` → `widgets` → `features` → `entities` → `shared` (`@shared/*`)
+**Import direction (strict):** `app` → `views` → `widgets` → `features` → `entities` → `shared`
+
+There are **two** shared layers, and the aliases differ by one character:
+
+| Alias        | Location                 | Use for                                |
+| ------------ | ------------------------ | -------------------------------------- |
+| `@shared/*`  | `packages/shared/src/`   | Code genuinely needed by **both** apps |
+| `@/shared/*` | `apps/<app>/src/shared/` | Code only **one** app needs            |
+
+Prefer the app-local `@/shared/*` by default. Promote to `packages/shared` only once a second app actually needs it — same rule as entities. Example: `apps/client/src/shared/lib/analytics.ts` holds GA4 tracking because GA is wired into client only (`apps/client/src/app/layout.tsx`); putting it in `packages/shared` would pull a client-only concern into admin.
+
+`apps/admin` has no local `shared/` layer yet — create one only when it actually needs app-local shared code.
 
 Each layer folder uses barrel exports via `index.ts`.
 
