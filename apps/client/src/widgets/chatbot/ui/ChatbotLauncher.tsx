@@ -9,6 +9,7 @@ import { useGetMyInfo } from '@shared/entities/user';
 import { cn } from '@shared/lib';
 
 import { LoginModal } from '@/features/auth';
+import { trackEvent } from '@/shared/lib';
 
 import ChatbotPanel from './ChatbotPanel';
 
@@ -34,6 +35,7 @@ const ChatbotLauncher = () => {
       return;
     }
 
+    trackEvent('chatbot_open', {});
     setIsOpen(true);
   };
 

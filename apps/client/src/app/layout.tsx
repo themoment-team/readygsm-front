@@ -59,7 +59,14 @@ const RootLayout = ({
   return (
     <html lang="ko">
       {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+        /**
+         * 개발 환경 이벤트는 debug_mode를 달아 DebugView로 보낸다.
+         * GA4의 '개발자 트래픽' 데이터 필터가 이 플래그를 기준으로 운영 리포트에서 걸러낸다.
+         */
+        <GoogleAnalytics
+          gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}
+          debugMode={process.env.NODE_ENV === 'development'}
+        />
       )}
       <body className={pretendard.className}>
         <script
