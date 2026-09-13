@@ -67,7 +67,7 @@ const ApplicantManagementTable = ({ activityId }: ApplicantManagementTableProps)
         <div className={cn('flex min-h-120 w-full flex-1 items-center justify-center')}>
           <p
             className={cn(
-              'text-center text-xl font-semibold tracking-[-0.0375rem] whitespace-nowrap text-[#656e82]',
+              'text-secondary-slate text-center text-xl font-semibold tracking-[-0.0375rem] whitespace-nowrap',
             )}
           >
             등록된 신청자가 없습니다

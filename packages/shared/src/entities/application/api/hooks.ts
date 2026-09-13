@@ -5,23 +5,10 @@ import { type ApiResponseType, applicationUrl, get, post } from '@shared/api';
 import type { ApplicationType, PostApplicationMutationInput } from '../model/types';
 
 export const applicationQueryKeys = {
-  getMyApplication: (userId: number) => ['application', 'my', userId] as const,
   allAdminApplications: () => ['application', 'admin', 'list'] as const,
   getAllApplications: (activityId: number) =>
     ['application', 'admin', 'list', { activityId }] as const,
 } as const;
-
-export const useGetMyApplication = (userId: number, enabled = true) =>
-  useQuery({
-    queryKey: applicationQueryKeys.getMyApplication(userId),
-    queryFn: () =>
-      get<ApiResponseType<ApplicationType>>(applicationUrl.getMyApplication(), {
-        params: { userId },
-      }),
-    select: (res) => res.data,
-    retry: false,
-    enabled,
-  });
 
 export const usePostApplication = () =>
   useMutation({

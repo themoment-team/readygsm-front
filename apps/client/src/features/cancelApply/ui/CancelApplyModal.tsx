@@ -5,8 +5,9 @@ import { toast } from 'react-toastify';
 import { getApiErrorMessage, getApiErrorStatus } from '@shared/api';
 import { ConfirmModal } from '@shared/ui';
 
-import { useCancelApply } from '@/features/cancelApply/model/useCancelApply';
 import { trackEvent } from '@/shared/lib';
+
+import { useCancelApply } from '../model/useCancelApply';
 
 interface CancelApplyModalProps {
   isOpen: boolean;

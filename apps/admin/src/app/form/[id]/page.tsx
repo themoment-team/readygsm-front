@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 
-import { getActivityById } from '@shared/entities/activity';
+import { getActivityById } from '@shared/entities/activity/index.server';
 
 import { ActivityFormView } from '@/features/manageActivity';
 

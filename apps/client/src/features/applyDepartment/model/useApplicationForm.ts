@@ -6,7 +6,8 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
 import { getApiErrorMessage, getApiErrorStatus } from '@shared/api';
-import { activityQueryKeys, revalidateActivityList } from '@shared/entities/activity';
+import { activityQueryKeys } from '@shared/entities/activity';
+import { revalidateActivityList } from '@shared/entities/activity/index.server';
 import { usePostApplication } from '@shared/entities/application';
 
 import { trackEvent } from '@/shared/lib';
